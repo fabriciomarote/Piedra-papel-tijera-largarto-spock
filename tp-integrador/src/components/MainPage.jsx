@@ -15,13 +15,14 @@ const MainPage = () => {
           <div className='mainPage-container'>
             <div className='box-container'>
               <div className='title'>
-                Piedra, Papel, Tijera, Lagarto o Spock
+                Rock Paper Scissors Lizard Spock
               </div>
               <div className='image-juego'>
                 <img className='imagen' src={img} alt="imagen"/>
               </div>
               <div className='buttons'>
-                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">Jugar!</button>
+                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">Play!</button>
+                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">Reglas</button>
               </div>
             </div>
           </div>
