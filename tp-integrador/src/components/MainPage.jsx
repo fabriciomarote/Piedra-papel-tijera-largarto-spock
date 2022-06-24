@@ -1,30 +1,28 @@
-import { useState } from 'react';
-import img2 from '../juego.png';
-import ModalRules from "./Modal"
+import { useContext } from 'react';
+import img from '../images/juego.png';
+import Modal from "./Modal"
 import '../styles/MainPage.css';
-
+import { Context } from './Context';
+import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
 
-    const [modelState, setModelState] = useState(false);
+  const navigate = useNavigate();
+  const goPlayGame = () => navigate('/game')
 
     return (
         <>
-        <div className='modalOpened' >
-            {modelState  && <ModalRules/>}
-        </div>
           <div className='mainPage-container'>
             <div className='box-container'>
-                <div className='title'>
+              <div className='title'>
                 Piedra, Papel, Tijera, Lagarto o Spock
-                </div>
-                <div className='image-juego'>
-                    <img className='imagen' src={img2} alt="imagen"/>
-                </div>
-                <div className='buttons'>
-                <button type="submit" className="btn-btn btn-info btn-mp">Jugar!</button>
-                <button onClick={() => {setModelState(true)}} className="btn-btn btn-info btn-mp">Reglas</button>
-                </div>
+              </div>
+              <div className='image-juego'>
+                <img className='imagen' src={img} alt="imagen"/>
+              </div>
+              <div className='buttons'>
+                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">Jugar!</button>
+              </div>
             </div>
           </div>
         </>

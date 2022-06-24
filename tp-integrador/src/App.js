@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import GamePage from './components/GamePage';
 import MainPage from './components/MainPage';
-import OnePlayer from './components/OnePlayer';
-import TwoPlayers from './components/TwoPlayers';
 
 function App() {
 
@@ -9,8 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<MainPage/>} />
-        <Route exact path="/single" element={<OnePlayer/>} />
-        <Route exact path="/multiplayer" element={<TwoPlayers/>} />
+        <Route exact path="/game" element={<GamePage/>} />
       </Routes>
     </BrowserRouter>
   );
