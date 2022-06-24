@@ -1,3 +1,56 @@
 body {
-    background-color: blue;
+    background-color: rgb(20, 20, 20);
+    display: grid;
+    justify-content: center;
+    padding: 50px;
+}
+
+.mainPage-container {
+    display: grid;
+    justify-content: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-style:inset;
+    border-radius: 40px;
+    background-color: whitesmoke;
+    width: 500px;
+    height: 100%;
+    box-shadow: 0px 0px 100px rgba(15, 1, 74, 0.5);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 27px;
+    font-weight: 750;
+    font-family:fantasy;
+}
+
+.imagen {
+    height: 100%;
+    width: 100%;
+    border-radius: 250px;
+}
+
+.buttons {
+    display: flex;
+    justify-content:space-evenly;
+    padding: 30px;
+}
+
+.btn-mp {
+    height: 50px;
+    width: 100px;
+    border-radius: 30px;
+    background-color: rgb(15, 1, 74);
+    font-size: 20px;
+    font-weight: 800;
+    border-style: none;
+}
+
+.btn-mp:hover {
+    transform: scale(1.1);
+    background-color: brown;
 }
