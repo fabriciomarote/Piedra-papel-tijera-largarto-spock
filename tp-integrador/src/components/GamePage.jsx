@@ -1,8 +1,8 @@
-import imgRock from '../images/rock.svg';
-import imgPaper from '../images/paper.svg';
-import imgScissors from '../images/scissors.svg';
-import imgLizard from '../images/lizard.svg';
-import imgSpock from '../images/spock.svg';
+import imgRock from '../images/rock-user.jpeg';
+import imgPaper from '../images/paper-user.jpeg';
+import imgScissors from '../images/scissors-user.jpeg';
+import imgLizard from '../images/lizard-user.jpeg';
+import imgSpock from '../images/spock-user.jpeg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../styles/GamePage.css';
@@ -11,6 +11,8 @@ const GamePage = () => {
 
     const [countUser, setCountUser] = useState(0)
     const [countComp, setCountComp] = useState(0)
+    const [userSelection, setUserSelection] = useState(null)
+    const [compSelection, setCompSelection] = useState(null)
 
     const rock = {
         name: "Rock",
@@ -53,6 +55,11 @@ const GamePage = () => {
         setCountComp(0);
     }
 
+    const clickHandler = (value) => {
+        setUserSelection(value);
+        console.log(value)
+    }
+
     const realizarJugada = (elem) => {
         if (elem.win.includes(tiroDeComp.name)) {
             console.log(elem)
@@ -90,11 +97,11 @@ const GamePage = () => {
                     </div>
                     <div className='game-container'>
                         <div className='buttons-container'>
-                            <img className='img' onClick={() => realizarJugada(rock)} src={rock.src} alt="imagen"/>
-                            <img className='img' onClick={() => realizarJugada(paper)} src={paper.src} alt="imagen"/>
-                            <img className='img' onClick={() => realizarJugada(scissors)} src={scissors.src} alt="imagen"/>
-                            <img className='img' onClick={() => realizarJugada(lizard)} src={lizard.src} alt="imagen"/>
-                            <img className='img' onClick={() => realizarJugada(spock)} src={spock.src} alt="imagen"/>
+                            <img className='img' onClick={() => clickHandler(rock)} src={rock.src} alt="imagen"/>
+                            <img className='img' onClick={() => clickHandler(paper)} src={paper.src} alt="imagen"/>
+                            <img className='img' onClick={() => clickHandler(scissors)} src={scissors.src} alt="imagen"/>
+                            <img className='img' onClick={() => clickHandler(lizard)} src={lizard.src} alt="imagen"/>
+                            <img className='img' onClick={() => clickHandler(spock)} src={spock.src} alt="imagen"/>
                         </div>
                     </div>
                 </div>    
