@@ -44,11 +44,13 @@ const GamePage = () => {
         src: imgSpock 
     }
 
-    const tirosDeComp = [rock, paper, scissors, lizard, spock]
+    const selection = [rock, paper, scissors, lizard, spock]
 
-    const tiroDeComp = () => {
-        return tirosDeComp.random()
-    }
+    const randomChoice = () => {
+        const randomSelection =
+          selection[Math.floor(Math.random() * selection.length)];
+          setCompSelection(randomSelection);
+      };
 
     const reserCount = () => {
         setCountUser(0);
@@ -57,20 +59,27 @@ const GamePage = () => {
 
     const clickHandler = (value) => {
         setUserSelection(value);
-        console.log(value)
+        randomChoice();
     }
 
-    const realizarJugada = (elem) => {
-        if (elem.win.includes(tiroDeComp.name)) {
-            console.log(elem)
-            console.log("elem")
+    const realizarJugada = (selection1, selection2) => {
+        console.log(selection1);
+        console.log(selection2);
+        console.log(selection1.win.includes(selection2.name));
+        if (selection1.win.includes(selection2.name)) {
             setCountUser(countUser + 1);
-        } else if ( elem.name == tiroDeComp.name) {
+        } else if ( selection1 == selection2) {
             //empate
         } else {
             setCountComp(countComp + 1)
         }
     }
+
+    useEffect(() => {
+        if (userSelection != null && compSelection != null) {
+          realizarJugada(userSelection, compSelection)
+        } 
+  }, [userSelection, compSelection]);
 
     const navigate = useNavigate();
     const goBack = () => navigate('/')
