@@ -1,14 +1,20 @@
-.gamePage-container, .container-left {
+.gamePage-container {
+    display: grid;
+    width: 1300px;
+    justify-content: center;
+}
+
+.navbar, .navbar-left , .navbar-medium, .navbar-right {
     display: flex;
     justify-content: center;
+    width: 1300px;
 }
 
-.game-container {
-    display: grid;
-    justify-content: center;
+.content-game {
+    padding: 10px;
 }
 
-.title-game {
+.player {
     font-size:  20px;
     font-weight: 900;
     color: brown;
@@ -67,7 +73,7 @@
     box-shadow: 0px 0px 25px 
     rgba(148, 23, 23, 0.9);
     padding: 5px;
-    margin: 30px;
+    margin: 20px;
 }
 
 .img:hover {
@@ -84,6 +90,16 @@
     justify-content: center;
 }
 
+.btn-gp {
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    background-color: brown;
+    font-size: 20px;
+    font-weight: 800;
+    border-style: none;
+}
+
 .msg-output {
     display: flex;
     justify-content: center;
@@ -91,7 +107,6 @@
     font-size: 30px;
     font-weight: 800;
 }
-
 
 .selection-image {
     width: 200px;

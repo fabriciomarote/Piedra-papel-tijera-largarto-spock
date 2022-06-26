@@ -19,6 +19,8 @@ const GamePage = () => {
     const [userSelection, setUserSelection] = useState(null);
     const [compSelection, setCompSelection] = useState(null);
     const [msgOutput, setMsgOutput] = useState("");
+    const [state, setState] = useState(false);
+
     const navigate = useNavigate();
     const goBack = () => navigate('/');
 
@@ -85,9 +87,10 @@ const GamePage = () => {
     const reserCount = () => {
         setCountUser(0);
         setCountComp(0);
-        setUserSelection(null)
-        setCompSelection(null)
-        setMsgOutput("")
+        setUserSelection(null);
+        setCompSelection(null);
+        setMsgOutput("");
+        setState(false);
     };
 
     const clickHandler = (value) => {
@@ -95,15 +98,95 @@ const GamePage = () => {
         randomChoice();
     };
 
+    const startingHandler = () => {
+        setState(true);
+    }
+
     const compareAndSetStates = (selection1, selection2) => {
         if (selection1.win.includes(selection2.name)) {
             setCountUser(countUser + 1);
-            setMsgOutput("Ganaste")
+            setMsgOutput("Ganaste");
         } else if ( selection1.name == selection2.name) {
-            setMsgOutput("Empate")
+            setMsgOutput("Empate");
         } else {
-            setCountComp(countComp + 1)
-            setMsgOutput("Perdiste")
+            setCountComp(countComp + 1);
+            setMsgOutput("Perdiste");
+        }
+    };
+
+    const renderStarting  = () => {
+        if (state) {
+             if (countUser == 3) {
+                return (
+                    <>
+                        <div className='contador-container'>
+                            <div className='contador'> 
+                                <div className='contador-left'> 
+                                    <p className='player'>USER</p>
+                                    <p className='point'>{countUser}</p>
+                                </div>
+                                <p className='title-game'>-</p>
+                                <div className='contador-right'> 
+                                    <p className='point'>{countComp}</p>
+                                    <p className='player'>COMP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p className='player'>Ganaste la partida!</p>
+                    </>
+                )
+            }
+            else if (countComp == 3) {
+                return (
+                    <>
+                        <div className='contador-container'>
+                            <div className='contador'> 
+                                <div className='contador-left'> 
+                                    <p className='player'>USER</p>
+                                    <p className='point'>{countUser}</p>
+                                </div>
+                                <p className='title-game'>-</p>
+                                <div className='contador-right'> 
+                                    <p className='point'>{countComp}</p>
+                                    <p className='player'>COMP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p className='player'>Perdiste la partida!</p>
+                    </>
+                )
+            }
+            else {
+                return (
+                    <>
+                        <div className='contador-container'>
+                            <div className='contador'> 
+                                <div className='contador-left'> 
+                                    <p className='player'>USER</p>
+                                    <p className='point'>{countUser}</p>
+                                </div>
+                                <p className='title-game'>-</p>
+                                <div className='contador-right'> 
+                                    <p className='point'>{countComp}</p>
+                                    <p className='player'>COMP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='game-container'>
+                            <div className='buttons-container'>
+                                {selectionUser.map((select, index) => (
+                                    <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src} alt="imagen"/>
+                                ))}
+                            </div>
+                        </div>
+                        <div className='selections-content'>
+                            <div className='buttons-container'>
+                                {renderSelections()}
+                            </div>
+                        </div>
+                    </>
+                )
+            }
         }
     };
 
@@ -120,7 +203,6 @@ const GamePage = () => {
                             <p className='msg'>{msgOutput}</p>
                         </div>
                     </div>
-
                 </>
             )
         } 
@@ -134,41 +216,21 @@ const GamePage = () => {
 
     return (
         <>
-            <div className='gamePage-container'>
-                <div className='col-lg-2 col-md-12 col-sm-12 col-xs-12 container-left'>
-                    <button type="submit" onClick={goBack} className="btn-btn btn-info btn-mp">Exit</button>
-                </div>
-                <div className='col-lg-8 col-md-12 col-sm-12 col-xs-12 container-medium'>
-                    <div className='contador-container'>
-                    <div className='contador'> 
-                        <div className='contador-left'> 
-                            <p className='title-game'>USER</p>
-                            <p className='point'>{countUser}</p>
-                        </div>
-                        <p className='title-game'>-</p>
-                        <div className='contador-right'> 
-                            <p className='point'>{countComp}</p>
-                            <p className='title-game'>COMP</p>
-                        </div>
+            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
+                    <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-left'>
+                        <button type="submit" onClick={goBack} className="btn-btn btn-info btn-gp">Salir</button>
                     </div>
-                    </div>
-                    <div className='game-container'>
-                        <div className='buttons-container'>
-                            {selectionUser.map((select, index) => (
-                                <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src} alt="imagen"/>
-                            ))}
-                        </div>
-                    </div>
-                    <div className='selections-content'>
-                        <div className='buttons-container'>
-                          {renderSelections()}
-                        </div>
-                    </div>
-                    
+                    <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-medium'>
+                        <button type="submit" onClick={startingHandler} className="btn-btn btn-info btn-gp">Iniciar Partida</button>
+                    </div>    
+                    <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-right'>
+                        <button type="submit" onClick={reserCount} className="btn-btn btn-info btn-gp">Reiniciar Partida</button> 
+                    </div> 
+                </div> 
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game'>
+                    {renderStarting()}
                 </div>    
-                <div className='col-lg-2 col-md-12 col-sm-12 col-xs-12 container-right'>
-                    <button type="submit" onClick={reserCount} className="btn-btn btn-info btn-mp">Reset</button>
-                </div>
             </div>
         </>
     );

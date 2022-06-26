@@ -2,7 +2,7 @@ body {
     background-color: rgb(20, 20, 20);
     display: grid;
     justify-content: center;
-    padding: 50px;
+    padding: 40px;
 }
 
 .mainPage-container {
@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 30px;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 900;
     font-family:fantasy;
     color: brown;
@@ -44,7 +44,7 @@ body {
 
 .btn-mp {
     height: 50px;
-    width: 150px;
+    width: 180px;
     border-radius: 30px;
     background-color: brown;
     font-size: 20px;
