@@ -12,6 +12,8 @@
 
 .content-game {
     padding: 10px;
+    display: grid;
+    justify-content: center;
 }
 
 .player {
@@ -32,13 +34,13 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
-.contador-container {
+.counter-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contador {
+.counter {
     display: flex;
     height: 100px;
     justify-content: center;
@@ -51,13 +53,7 @@
     padding-top: 25px;
 }
 
-.contador-left, .contador-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.buttons-container {
+.counter-left, .counter-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,12 +76,12 @@
     opacity: 4.6;
 }
 
-.selections-content {
+.box-selections-content {
     display: grid;
     justify-content: center;
 }
 
-.buttons-container {
+.box-buttons-content {
     display: flex;
     justify-content: center;
 }
@@ -118,4 +114,37 @@
     rgba(148, 23, 23, 0.9);
     padding: 5px;
     margin: 30px;
+}
+
+.box-end-game {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.box-content {
+    display: grid;
+    justify-content: right;
+    align-items: center;
+    border-style:solid;
+    border-width: 2px;
+    border-color: brown;
+    box-shadow: 0px 0px 25px 
+    rgba(148, 23, 23, 0.9);
+    border-radius: 20px;
+    height: 100%;
+    padding: 0px;
+}
+
+.loser-image, .winner-image {
+    width: 300px;
+    height: 300px;
+}
+
+.msg-end {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
 }

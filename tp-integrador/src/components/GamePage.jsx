@@ -8,14 +8,16 @@ import imgLizard1 from '../images/lizard-user.jpeg';
 import imgLizard2 from '../images/lizard-comp.jpeg';
 import imgSpock1 from '../images/spock-user.jpeg';
 import imgSpock2 from '../images/spock-comp.jpeg';
+import win from '../images/winner.png';
+import lose from '../images/loser.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../styles/GamePage.css';
 
 const GamePage = () => {
 
-    const [countUser, setCountUser] = useState(0);
-    const [countComp, setCountComp] = useState(0);
+    const [counterUser, setCounterUser] = useState(0);
+    const [counterComp, setCounterComp] = useState(0);
     const [userSelection, setUserSelection] = useState(null);
     const [compSelection, setCompSelection] = useState(null);
     const [msgOutput, setMsgOutput] = useState("");
@@ -84,9 +86,9 @@ const GamePage = () => {
           setCompSelection(randomSelection);
       };
 
-    const reserCount = () => {
-        setCountUser(0);
-        setCountComp(0);
+    const resetCounter = () => {
+        setCounterUser(0);
+        setCounterComp(0);
         setUserSelection(null);
         setCompSelection(null);
         setMsgOutput("");
@@ -104,86 +106,76 @@ const GamePage = () => {
 
     const compareAndSetStates = (selection1, selection2) => {
         if (selection1.win.includes(selection2.name)) {
-            setCountUser(countUser + 1);
-            setMsgOutput("Ganaste");
+            setCounterUser(counterUser + 1);
+            setMsgOutput("Ganaste el punto");
         } else if ( selection1.name == selection2.name) {
-            setMsgOutput("Empate");
+            setMsgOutput("Han empatado el punto");
         } else {
-            setCountComp(countComp + 1);
-            setMsgOutput("Perdiste");
+            setCounterComp(counterComp + 1);
+            setMsgOutput("Perdiste el punto");
         }
     };
 
+    const renderCounter = () => {
+        return (
+            <>
+                <div className='counter-container'>
+                    <div className='counter'> 
+                        <div className='counter-left'> 
+                            <p className='player'>USER</p>
+                            <p className='point'>{counterUser}</p>
+                        </div>
+                        <p className='title-game'>-</p>
+                        <div className='counter-right'> 
+                            <p className='point'>{counterComp}</p>
+                            <p className='player'>COMP</p>
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
     const renderStarting  = () => {
         if (state) {
-             if (countUser == 3) {
+             if (counterUser == 3) {
                 return (
                     <>
-                        <div className='contador-container'>
-                            <div className='contador'> 
-                                <div className='contador-left'> 
-                                    <p className='player'>USER</p>
-                                    <p className='point'>{countUser}</p>
-                                </div>
-                                <p className='title-game'>-</p>
-                                <div className='contador-right'> 
-                                    <p className='point'>{countComp}</p>
-                                    <p className='player'>COMP</p>
-                                </div>
+                        {renderCounter()}
+                        <div className='box-end-game'>
+                            <div className='box-content'>
+                                <img className='winner-image' src={win} alt="imagen"/>
+                                <p className='msg-end'>Ganaste la partida!</p>
                             </div>
-                        </div>
-                        <p className='player'>Ganaste la partida!</p>
+                        </div> 
                     </>
                 )
             }
-            else if (countComp == 3) {
+            else if (counterComp == 3) {
                 return (
                     <>
-                        <div className='contador-container'>
-                            <div className='contador'> 
-                                <div className='contador-left'> 
-                                    <p className='player'>USER</p>
-                                    <p className='point'>{countUser}</p>
-                                </div>
-                                <p className='title-game'>-</p>
-                                <div className='contador-right'> 
-                                    <p className='point'>{countComp}</p>
-                                    <p className='player'>COMP</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p className='player'>Perdiste la partida!</p>
+                        {renderCounter()}
+                        <div className='box-end-game'>
+                            <div className='box-content'>
+                                <img className='loser-image' src={lose} alt="imagen"/>
+                                <p className='msg-end'>Perdiste la partida!</p>
+                            </div>  
+                        </div>      
                     </>
                 )
             }
             else {
                 return (
                     <>
-                        <div className='contador-container'>
-                            <div className='contador'> 
-                                <div className='contador-left'> 
-                                    <p className='player'>USER</p>
-                                    <p className='point'>{countUser}</p>
-                                </div>
-                                <p className='title-game'>-</p>
-                                <div className='contador-right'> 
-                                    <p className='point'>{countComp}</p>
-                                    <p className='player'>COMP</p>
-                                </div>
-                            </div>
-                        </div>
+                        {renderCounter()}
                         <div className='game-container'>
-                            <div className='buttons-container'>
+                            <div className='box-buttons-content'>
                                 {selectionUser.map((select, index) => (
                                     <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src} alt="imagen"/>
                                 ))}
                             </div>
                         </div>
-                        <div className='selections-content'>
-                            <div className='buttons-container'>
-                                {renderSelections()}
-                            </div>
-                        </div>
+                        {renderSelections()}
                     </>
                 )
             }
@@ -194,8 +186,8 @@ const GamePage = () => {
         if (userSelection != null && compSelection != null) {
             return (
                 <>
-                    <div className='selections-content'>
-                        <div className='buttons-container'>
+                    <div className='box-selections-content'>
+                        <div className='box-buttons-selected-content'>
                             <img className='selection-image' src={userSelection.src} alt="imagen"/>
                             <img className='selection-image' src={compSelection.src} alt="imagen"/>
                         </div>
@@ -219,13 +211,13 @@ const GamePage = () => {
             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
                     <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-left'>
-                        <button type="submit" onClick={goBack} className="btn-btn btn-info btn-gp">Salir</button>
+                        <button onClick={goBack} className="btn-btn btn-info btn-gp">Salir</button>
                     </div>
                     <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-medium'>
-                        <button type="submit" onClick={startingHandler} className="btn-btn btn-info btn-gp">Iniciar Partida</button>
+                        <button onClick={startingHandler} className="btn-btn btn-info btn-gp">Iniciar Partida</button>
                     </div>    
                     <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-right'>
-                        <button type="submit" onClick={reserCount} className="btn-btn btn-info btn-gp">Reiniciar Partida</button> 
+                        <button onClick={resetCounter} className="btn-btn btn-info btn-gp">Reiniciar Partida</button> 
                     </div> 
                 </div> 
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game'>
