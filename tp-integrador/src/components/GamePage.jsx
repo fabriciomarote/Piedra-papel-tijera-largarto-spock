@@ -16,6 +16,8 @@ import '../styles/GamePage.css';
 
 const GamePage = () => {
 
+    const [counterTotalUser, setCounterTotalUser] = useState(0);
+    const [counterTotalComp, setCounterTotalComp] = useState(0);
     const [counterUser, setCounterUser] = useState(0);
     const [counterComp, setCounterComp] = useState(0);
     const [userSelection, setUserSelection] = useState(null);
@@ -120,15 +122,17 @@ const GamePage = () => {
         return (
             <>
                 <div className='counter-container'>
-                    <div className='counter'> 
-                        <div className='counter-left'> 
-                            <p className='player'>USER</p>
-                            <p className='point'>{counterUser}</p>
+                    <div className='counter'>
+                        <div className='counter-top'> 
+                            <p className='title-counter'>Contador de Partida</p>
                         </div>
-                        <p className='title-game'>-</p>
-                        <div className='counter-right'> 
-                            <p className='point'>{counterComp}</p>
-                            <p className='player'>COMP</p>
+                        <div className='counter-bottom'> 
+                            <div className='counter-left'> 
+                                <p className='point'>{counterUser}</p>
+                            </div>
+                            <div className='counter-right'> 
+                                <p className='point'>{counterComp}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,30 +143,32 @@ const GamePage = () => {
     const renderStarting  = () => {
         if (state) {
              if (counterUser == 3) {
+                //setCounterTotalUser(counterTotalUser + 1)
                 return (
                     <>
                         {renderCounter()}
                         <div className='box-end-game'>
                             <div className='box-content'>
                                 <img className='winner-image' src={win} alt="imagen"/>
-                                <p className='msg-end'>Ganaste la partida!</p>
+                                <p className='msg-end'>¡Ganaste la partida!</p>
                             </div>
                         </div> 
                     </>
                 )
             }
             else if (counterComp == 3) {
+                //setCounterTotalComp(counterTotalComp + 1)
                 return (
                     <>
                         {renderCounter()}
                         <div className='box-end-game'>
                             <div className='box-content'>
                                 <img className='loser-image' src={lose} alt="imagen"/>
-                                <p className='msg-end'>Perdiste la partida!</p>
+                                <p className='msg-end'>¡Perdiste la partida!</p>
                             </div>  
                         </div>      
                     </>
-                )
+                )       
             }
             else {
                 return (
@@ -200,6 +206,24 @@ const GamePage = () => {
         } 
     };
 
+    const renderByState = () => {
+        if (state) {
+            return (
+                <>
+                    <button onClick={resetCounter} className="btn-btn btn-info btn-gp">Reiniciar Partida</button> 
+                </>
+            )
+        } else {
+            return (
+                <>
+                <button onClick={startingHandler} className="btn-btn btn-info btn-gp">Iniciar Partida</button>
+                   
+                </>
+            )
+        }
+
+    }
+
     useEffect(() => {
         if (userSelection != null && compSelection != null) {
             compareAndSetStates(userSelection, compSelection)
@@ -214,10 +238,26 @@ const GamePage = () => {
                         <button onClick={goBack} className="btn-btn btn-info btn-gp">Salir</button>
                     </div>
                     <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-medium'>
-                        <button onClick={startingHandler} className="btn-btn btn-info btn-gp">Iniciar Partida</button>
+                        <div className='counter-total-container'>
+                            <div className='counter-total'>
+                                <div className='counter-top'> 
+                                    <p className='title-counter-total'>Contador Total</p>
+                                </div>
+                                <div className='counter-bottom'> 
+                                    <div className='counter-total-left'> 
+                                        <p className='player'>USER</p>
+                                        <p className='point'>{counterTotalUser}</p>
+                                    </div>
+                                    <div className='counter-total-right'> 
+                                        <p className='point'>{counterTotalComp}</p>
+                                        <p className='player'>COMP</p>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
                     </div>    
                     <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-right'>
-                        <button onClick={resetCounter} className="btn-btn btn-info btn-gp">Reiniciar Partida</button> 
+                        {renderByState()}
                     </div> 
                 </div> 
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game'>
