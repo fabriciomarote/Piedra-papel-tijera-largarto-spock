@@ -13,7 +13,7 @@ body {
     align-items: center;
     border-style:inset;
     border-radius: 40px;
-    background-color: whitesmoke;
+    background-color: brown;
     width: 500px;
     height: 100%;
     box-shadow: 0px 0px 50px 
@@ -27,13 +27,34 @@ body {
     font-size: 28px;
     font-weight: 900;
     font-family:fantasy;
-    color: brown;
+    color: rgb(0, 0, 0);
 }
 
 .imagen {
     height: 100%;
     width: 100%;
     border-radius: 250px;
+}
+
+.images-game {
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box-top-images, .box-medium-images, .box-bottom-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-mp {
+    width: 110px;
+    border-radius: 100px;
+    border-style: inset;
+    border-width: 5px;
+    border-color: rgb(0, 0, 0);
+    margin: 5px;
 }
 
 .buttons {
@@ -46,13 +67,16 @@ body {
     height: 50px;
     width: 180px;
     border-radius: 30px;
-    background-color: brown;
+    background-color: white;
     font-size: 20px;
     font-weight: 800;
     border-style: none;
+    color: black;
+    margin: 10px;
 }
 
-.btn-mp:hover {
+.btn-mp:focus, .btn-mp:hover, .btn-mp:active {
+    background-color: white;
+    color: black;
     transform: scale(1.1);
-    background-color: brown;
 }
