@@ -88,13 +88,28 @@ const GamePage = () => {
           setCompSelection(randomSelection);
       };
 
-    const resetCounter = () => {
+    const resetFullCounter = () => {
+        setCounterTotalUser(0)
+        setCounterTotalComp(0)
         setCounterUser(0);
         setCounterComp(0);
         setUserSelection(null);
         setCompSelection(null);
         setMsgOutput("");
         setState(false);
+    };
+
+    const resetCounter = () => {
+        setCounterUser(0);
+        setCounterComp(0);
+        setUserSelection(null);
+        setCompSelection(null);
+        setMsgOutput("");
+        if (counterUser == 3) {
+            setCounterTotalUser(counterTotalUser + 1)
+        } else if (counterComp == 3) {
+            setCounterTotalComp(counterTotalComp + 1)
+        }
     };
 
     const clickHandler = (value) => {
@@ -143,7 +158,6 @@ const GamePage = () => {
     const renderStarting  = () => {
         if (state) {
              if (counterUser == 3) {
-                //setCounterTotalUser(counterTotalUser + 1)
                 return (
                     <>
                         {renderCounter()}
@@ -157,7 +171,6 @@ const GamePage = () => {
                 )
             }
             else if (counterComp == 3) {
-                //setCounterTotalComp(counterTotalComp + 1)
                 return (
                     <>
                         {renderCounter()}
@@ -210,7 +223,8 @@ const GamePage = () => {
         if (state) {
             return (
                 <>
-                    <button onClick={resetCounter} className="btn-btn btn-info btn-gp">Reiniciar Partida</button> 
+                    <button onClick={resetFullCounter} className="btn-btn btn-info btn-gp">Reiniciar juego</button>
+                    <button onClick={resetCounter} className="btn-btn btn-info btn-gp">Jugar otra partida</button>  
                 </>
             )
         } else {
@@ -227,7 +241,7 @@ const GamePage = () => {
     useEffect(() => {
         if (userSelection != null && compSelection != null) {
             compareAndSetStates(userSelection, compSelection)
-        } 
+        }
     }, [userSelection, compSelection]);
 
     return (
