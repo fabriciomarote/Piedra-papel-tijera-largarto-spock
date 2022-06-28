@@ -2,7 +2,7 @@ body {
     background-color: rgb(20, 20, 20);
     display: grid;
     justify-content: center;
-    padding: 40px;
+    padding: 10px;
 }
 
 .mainPage-container {

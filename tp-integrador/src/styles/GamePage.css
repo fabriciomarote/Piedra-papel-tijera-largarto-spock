@@ -10,6 +10,10 @@
     width: 1300px;
 }
 
+.navbar-right {
+    display: grid;
+}
+
 .content-game {
     padding: 5px;
     display: grid;
@@ -126,6 +130,7 @@
     font-size: 20px;
     font-weight: 800;
     border-style: none;
+    margin: 5px;
 }
 
 .btn-gp:focus, .btn-gp:hover, .btn-gp:active {
