@@ -7,7 +7,11 @@
 .navbar, .navbar-left , .navbar-medium, .navbar-right {
     display: flex;
     justify-content: center;
-    width: 1300px;
+    align-items: center;
+    width: 1490px;
+    height: 90%;
+    background-color: brown;
+    color: white;
 }
 
 .navbar-right {
@@ -21,7 +25,7 @@
 }
 
 .player {
-    font-size:  20px;
+    font-size: 20px;
     font-weight: 900;
     color: brown;
     text-align: center;
@@ -38,6 +42,17 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
+.point-total {
+    font-size:  40px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 20px;
+}
+
 .counter-container, .counter-total-container {
     display: flex;
     justify-content: center;
@@ -50,9 +65,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-style:groove;
-    border-color: brown;
-    border-radius: 20px;
     padding: 10px;
 }
 
@@ -64,8 +76,9 @@
     text-align: center;
     border-style:groove;
     border-color: white;
+    box-shadow: 0px 0px 20px rgb(70, 70, 70);
     border-radius: 20px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .counter-top, .counter-bottom {
@@ -86,13 +99,18 @@
 }
 
 .title-counter-total {
-    color: brown;
-    font-size: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    margin: 1px;
 }
 
 .p-counter {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 35px;
+}
+
+.player {
+    color: rgb(255, 255, 255);
 }
 
 .img {
@@ -104,7 +122,7 @@
     border-color: brown;
     box-shadow: 0px 0px 20px rgb(149, 29, 29);
     padding: 5px;
-    margin: 20px;
+    margin: 30px;
 }
 
 .img:hover {
@@ -123,19 +141,19 @@
 }
 
 .btn-gp {
-    height: 50px;
     width: 200px;
     border-radius: 30px;
-    background-color: brown;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 800;
     border-style: none;
-    margin: 5px;
+    cursor: pointer;
+    text-transform: none;
+    color: white;
 }
 
 .btn-gp:focus, .btn-gp:hover, .btn-gp:active {
-    background-color: brown;
     transform: scale(1.1);
+    color: white;
 }
 
 .msg-output {
@@ -155,7 +173,7 @@
     box-shadow: 0px 0px 25px 
     rgba(148, 23, 23, 0.9);
     padding: 5px;
-    margin: 15px;
+    margin: 10px;
 }
 
 .box-end-game {
@@ -172,6 +190,7 @@
     border-style:solid;
     border-width: 2px;
     border-color: brown;
+    color: white;
     box-shadow: 0px 0px 25px 
     rgba(148, 23, 23, 0.9);
     border-radius: 20px;
@@ -190,4 +209,20 @@
     color: white;
     text-align: center;
     margin: 10px;
+}
+
+.title {
+    display: grid;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 38%;
+    color: white;
+}
+
+.title span {
+    font-size: 5vw;
+    font-weight: 800;
+    text-shadow: 0px 0px 20px rgba(255, 0, 0, 0.9);
+    opacity: .1;
 }

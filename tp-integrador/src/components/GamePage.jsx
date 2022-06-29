@@ -198,6 +198,18 @@ const GamePage = () => {
                     </>
                 )
             }
+        } else {
+            return (
+                <>
+                    <div className='title'>
+                        <span>PIEDRA</span>
+                        <span>PAPEL</span>
+                        <span>TIJERA</span>
+                        <span>LAGARTO</span>
+                        <span>SPOCK</span>
+                    </div>
+                </>
+            )
         }
     };
 
@@ -221,17 +233,23 @@ const GamePage = () => {
 
     const renderByState = () => {
         if (state) {
+            if (counterComp == 3 || counterUser == 3) {
+                return (
+                    <>
+                        <a onClick={resetCounter} className="btn-gp" id='btn-navbar'>JUGAR OTRA PARTIDA</a>   
+                    </>
+                )
+            }
             return (
                 <>
-                    <button onClick={resetFullCounter} className="btn-btn btn-info btn-gp">Reiniciar juego</button>
-                    <button onClick={resetCounter} className="btn-btn btn-info btn-gp">Jugar otra partida</button>  
+                    <a onClick={resetFullCounter} className="btn-gp">REINICIAR JUEGO</a>   
                 </>
             )
+            
         } else {
             return (
                 <>
-                <button onClick={startingHandler} className="btn-btn btn-info btn-gp">Iniciar Partida</button>
-                   
+                    <a onClick={startingHandler} className="btn-gp">INICIAR PARTIDA</a>   
                 </>
             )
         }
@@ -248,10 +266,10 @@ const GamePage = () => {
         <>
             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
-                    <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-left'>
-                        <button onClick={goBack} className="btn-btn btn-info btn-gp">Salir</button>
+                    <div className='col-lg-3 col-md-12 col-sm-12 col-xs-12 navbar-left'>
+                        <a onClick={goBack} className="btn-gp">SALIR</a>
                     </div>
-                    <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-medium'>
+                    <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 navbar-medium'>
                         <div className='counter-total-container'>
                             <div className='counter-total'>
                                 <div className='counter-top'> 
@@ -260,17 +278,17 @@ const GamePage = () => {
                                 <div className='counter-bottom'> 
                                     <div className='counter-total-left'> 
                                         <p className='player'>USER</p>
-                                        <p className='point'>{counterTotalUser}</p>
+                                        <p className='point-total'>{counterTotalUser}</p>
                                     </div>
                                     <div className='counter-total-right'> 
-                                        <p className='point'>{counterTotalComp}</p>
+                                        <p className='point-total'>{counterTotalComp}</p>
                                         <p className='player'>COMP</p>
                                     </div>
                                 </div>   
                             </div>
                         </div>
                     </div>    
-                    <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 navbar-right'>
+                    <div className='col-lg-3 col-md-12 col-sm-12 col-xs-12 navbar-right'>
                         {renderByState()}
                     </div> 
                 </div> 
