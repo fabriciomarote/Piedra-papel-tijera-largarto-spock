@@ -19,9 +19,6 @@ const MainPage = () => {
         <>
           <div className='mainPage-container'>
             <div className='box-container'>
-              <div className='title'>
-                Piedra Papel Tijera Lagarto Spock
-              </div>
               <div className='images-game'>
                 <div className='box-top-images'>
                   <img className='img-mp' src={imgRock} alt="imagen"/>
@@ -36,8 +33,8 @@ const MainPage = () => {
                 </div>
               </div>
               <div className='buttons'>
-                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">Jugar!</button>
-                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">Instrucciones</button>
+                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">JUGAR!</button>
+                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">INSTRUCCIONES</button>
               </div>
             </div>
           </div>
