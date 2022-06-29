@@ -33,8 +33,8 @@ const MainPage = () => {
                 </div>
               </div>
               <div className='buttons'>
-                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">JUGAR!</button>
-                <button type="submit" onClick={goPlayGame} className="btn-btn btn-info btn-mp">INSTRUCCIONES</button>
+                <a onClick={goPlayGame} className="btn-mp">JUGAR!</a> 
+                <a onClick={goPlayGame} className="btn-mp">INSTRUCCIONES</a> 
               </div>
             </div>
           </div>

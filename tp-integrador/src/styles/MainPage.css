@@ -1,24 +1,23 @@
 body {
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(34, 34, 34);
     display: grid;
     flex-direction:row;
     justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .mainPage-container {
-    position: absolute;
-    bottom:4%;
-	left: 30%;      
+    position: absolute;  
     display: grid;
     justify-content: center;
     align-items: center;
     border-style:inset;
     border-radius: 40px;
-    background-color: brown;
-    width: 500px;
+    background-color: rgb(35, 35, 35);
     box-shadow: 0px 0px 50px 
     rgba(148, 23, 23, 2.9);
-    margin: 20px;
+    padding: 30px;
 }
 
 .imagen {
@@ -30,7 +29,6 @@ body {
 .images-game {
     display: grid;
     justify-content: center;
-    padding: 50px;
 }
 
 .box-top-images, .box-medium-images, .box-bottom-images {
@@ -44,30 +42,59 @@ body {
     border-radius: 100px;
     border-style: inset;
     border-width: 5px;
-    border-color: rgb(0, 0, 0);
-    margin: 5px;
+    border-color: rgb(255, 255, 255);
+    margin: 20px;
 }
 
 .buttons {
     display: flex;
-    justify-content:space-evenly;
-    padding: 30px;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 20px;
+    color: white;
 }
 
 .btn-mp {
-    height: 50px;
-    width: 180px;
-    border-radius: 30px;
-    background-color: white;
-    font-size: 17px;
+    height: 100%;
+    font-size: 20px;
     font-weight: 900;
     border-style: none;
-    color: black;
-    margin: 10px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
 .btn-mp:focus, .btn-mp:hover, .btn-mp:active {
-    background-color: white;
-    color: black;
     transform: scale(1.1);
+}
+
+@media (min-width: 1200px) {
+    .mainPage-container {
+        bottom:7%;
+        left: 35%; 
+        width: 400px;
+    }
+}
+  
+@media (max-width: 1199px) and (min-width: 992px) {
+    .mainPage-container {
+        bottom:7%;
+        left: 30%; 
+        width: 400px;
+    }  
+}
+  
+@media (max-width: 991px) and (min-width: 768px) {
+    .mainPage-container {
+        bottom:7%;
+        left: 25%; 
+        width: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mainPage-container {
+        bottom:7%;
+        left: 10%; 
+        width: 350px;
+    }
 }
