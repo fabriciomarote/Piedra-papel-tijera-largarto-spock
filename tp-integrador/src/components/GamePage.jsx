@@ -186,15 +186,19 @@ const GamePage = () => {
             else {
                 return (
                     <>
-                        {renderCounter()}
-                        <div className='game-container'>
-                            <div className='box-buttons-content'>
-                                {selectionUser.map((select, index) => (
-                                    <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src} alt="imagen"/>
-                                ))}
+                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                            {renderCounter()}  
+                        </div> 
+                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 game-container'>
+                                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-content'>
+                                    {selectionUser.map((select, index) => (
+                                        <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src} alt="imagen"/>
+                                    ))}
+                                </div>
                             </div>
+                            {renderSelections()}
                         </div>
-                        {renderSelections()}
                     </>
                 )
             }
@@ -266,10 +270,7 @@ const GamePage = () => {
         <>
             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
-                    <div className='col-lg-3 col-md-12 col-sm-12 col-xs-12 navbar-left'>
-                        <a onClick={goBack} className="btn-gp">SALIR</a>
-                    </div>
-                    <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12 navbar-medium'>
+                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-top'>
                         <div className='counter-total-container'>
                             <div className='counter-total'>
                                 <div className='counter-top'> 
@@ -288,7 +289,8 @@ const GamePage = () => {
                             </div>
                         </div>
                     </div>    
-                    <div className='col-lg-3 col-md-12 col-sm-12 col-xs-12 navbar-right'>
+                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-bottom'>
+                        <a onClick={goBack} className="btn-gp">SALIR</a>
                         {renderByState()}
                     </div> 
                 </div> 
