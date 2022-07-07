@@ -38,7 +38,7 @@
 }
 
 .selection-image-mp {
-    width: 150px;
+    width: 180px;
     border-radius: 150px;
     border-style:inset;
     border-width: 5px;
@@ -51,4 +51,15 @@
 
 .box-end-game {
     margin-top: 10px;
+}
+
+.winner-image-multi {
+    margin-left: 40px;
+    width: 300px;
+    height: 250px;
+}
+
+#btn-multi {
+    font-size: 20px;
+    
 }
