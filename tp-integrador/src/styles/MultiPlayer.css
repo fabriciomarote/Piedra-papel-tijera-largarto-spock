@@ -1,0 +1,54 @@
+
+.game-container-multiplayer {
+    display: flex;
+}
+
+.game-medium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-buttons-content-multiplayer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-multiplayer {
+    width: 110px;
+    border-radius: 150px;
+    opacity: .5;
+    border-style:inset;
+    border-width: 5px;
+    border-color: brown;
+    box-shadow: 0px 0px 20px rgb(149, 29, 29);
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.img-multiplayer:hover {
+    opacity: 4.6;
+    transform: scale(1.1);
+}
+
+.counter-multiplayer {
+    margin-top: 20px;
+}
+
+.selection-image-mp {
+    width: 150px;
+    border-radius: 150px;
+    border-style:inset;
+    border-width: 5px;
+    border-color: brown;
+    box-shadow: 0px 0px 25px 
+    rgba(148, 23, 23, 0.9);
+    padding: 5px;
+    margin: 10px;
+}
+
+.box-end-game {
+    margin-top: 10px;
+}
