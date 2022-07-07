@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import img from '../images/juego.png';
 import Modal from "./Modal"
 import imgRock from '../images/rock-user.jpeg';
 import imgPaper from '../images/paper-user.jpeg';
@@ -8,12 +7,14 @@ import imgLizard from '../images/lizard-user.jpeg';
 import imgSpock from '../images/spock-user.jpeg';
 import '../styles/MainPage.css';
 import { Context } from './Context';
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
 
   const navigate = useNavigate();
-  const goPlayGame = () => navigate('/game')
+  const goSinglePlayer = () => navigate('/singlePlayer')
+  const goMultiPlayer = () => navigate('/multiPlayer')
 
     return (
         <>
@@ -33,8 +34,11 @@ const MainPage = () => {
                 </div>
               </div>
               <div className='buttons'>
-                <a onClick={goPlayGame} className="btn-mp">JUGAR!</a> 
-                <a onClick={goPlayGame} className="btn-mp">INSTRUCCIONES</a> 
+                <a onClick={goSinglePlayer} className="btn-mp">REGLAS</a>
+              </div>
+              <div className='buttons-content'>
+                <a onClick={goSinglePlayer} className="btn-mp">UN JUGADOR</a> 
+                <a onClick={goMultiPlayer} className="btn-mp">MULTIJUGADOR</a>
               </div>
             </div>
           </div>
