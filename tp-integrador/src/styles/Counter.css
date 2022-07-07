@@ -1,0 +1,54 @@
+.counter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    display: grid;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-style:groove;
+    border-color: white;
+    box-shadow: 0px 0px 20px rgb(70, 70, 70);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.counter-top, .counter-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-left, .counter-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-counter {
+    color: white;
+    font-size: 10px;
+}
+
+.p-counter {
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+}
+
+.player {
+    color: rgb(255, 255, 255);
+}
+
+.point {
+    font-size:  20px;
+    font-weight: 900;
+    color: white;
+    width: 70px;
+    border-radius: 5px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
