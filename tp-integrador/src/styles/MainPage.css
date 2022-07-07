@@ -49,14 +49,22 @@ body {
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:center;
     padding: 20px;
     color: white;
+    font-size: 18px;
+}
+
+.buttons-content {
+    display: flex;
+    justify-content:space-between;
+    padding: 5px;
+    color: white;
+    font-size: 18px;
 }
 
 .btn-mp {
     height: 100%;
-    font-size: 20px;
     font-weight: 900;
     border-style: none;
     color: rgb(255, 255, 255);
