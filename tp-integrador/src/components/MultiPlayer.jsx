@@ -26,14 +26,14 @@ const MultiPlayer = () => {
         setCounterTotalPlayer2(0)
         setCounterPlayer1(0);
         setCounterPlayer2(0);
-        resetPoint()
+        resetPoint();
         setState(false);
     };
 
     const resetCounter = () => {
         setCounterPlayer1(0);
         setCounterPlayer2(0);
-        resetPoint()
+        resetPoint();
         if (counterPlayer1 == 3) {
             setCounterTotalPlayer1(counterTotalPlayer1 + 1);
         } else if (counterPlayer2 == 3) {
@@ -45,7 +45,7 @@ const MultiPlayer = () => {
         setPlayer1Selection(null);
         setPlayer2Selection(null);
         setMsgOutput("");
-        setButtonsBlocked(false)
+        setButtonsBlocked(false);
     };
 
     const clickHandler = (value, selected) => {
@@ -162,7 +162,7 @@ const MultiPlayer = () => {
                         </div>
                     </>
                 );
-            }
+            };
         } else {
             return (
                 <>
@@ -226,7 +226,7 @@ const MultiPlayer = () => {
     useEffect(() => {
         if (player1Selection != null && player2Selection != null) {
             compareAndSetStates(player1Selection, player2Selection);
-            setButtonsBlocked(true)
+            setButtonsBlocked(true);
         }
     }, [player1Selection, player2Selection]);
 

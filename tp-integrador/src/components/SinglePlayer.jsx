@@ -44,9 +44,9 @@ const SinglePlayer = () => {
         setUserSelection(null);
         setCompSelection(null);
         setMsgOutput("");
-        if (counterUser == 3) {
+        if (counterUser === 3) {
             setCounterTotalUser(counterTotalUser + 1)
-        } else if (counterComp == 3) {
+        } else if (counterComp === 3) {
             setCounterTotalComp(counterTotalComp + 1)
         }
     };
@@ -64,7 +64,7 @@ const SinglePlayer = () => {
         if (selection1.win.includes(selection2.name)) {
             setCounterUser(counterUser + 1);
             setMsgOutput("Ganaste el punto");
-        } else if ( selection1.name == selection2.name) {
+        } else if ( selection1.name === selection2.name) {
             setMsgOutput("Han empatado");
         } else {
             setCounterComp(counterComp + 1);
@@ -74,7 +74,7 @@ const SinglePlayer = () => {
 
     const renderStarting  = () => {
         if (state) {
-             if (counterUser == 3) {
+             if (counterUser === 3) {
                 return (
                     <>
                         <Counter player1={counterUser} player2={counterComp}/>
@@ -87,7 +87,7 @@ const SinglePlayer = () => {
                     </>
                 )
             }
-            else if (counterComp == 3) {
+            else if (counterComp === 3) {
                 return (
                     <>
                         <Counter player1={counterUser} player2={counterComp}/>
@@ -154,32 +154,30 @@ const SinglePlayer = () => {
 
     const renderByState = () => {
         if (state) {
-            if (counterComp == 3 || counterUser == 3) {
+            if (counterComp === 3 || counterUser === 3) {
                 return (
                     <>
                         <a onClick={resetCounter} className="btn-gp" id='btn-navbar'>JUGAR OTRA PARTIDA</a>   
                     </>
-                )
-            }
+                );
+            };
             return (
                 <>
                     <a onClick={resetFullCounter} className="btn-gp">REINICIAR JUEGO</a>   
                 </>
-            )
-            
+            );
         } else {
             return (
                 <>
                     <a onClick={startingHandler} className="btn-gp">INICIAR PARTIDA</a>   
                 </>
-            )
-        }
-
-    }
+            );
+        };
+    };
 
     useEffect(() => {
         if (userSelection != null && compSelection != null) {
-            compareAndSetStates(userSelection, compSelection)
+            compareAndSetStates(userSelection, compSelection);
         }
     }, [userSelection, compSelection]);
 
@@ -201,6 +199,6 @@ const SinglePlayer = () => {
             </div>
         </>
     );
-}
+};
 
 export default SinglePlayer;

@@ -9,31 +9,31 @@ import imgLizard2 from '../images/lizard-comp.jpeg';
 import imgSpock1 from '../images/spock-user.jpeg';
 import imgSpock2 from '../images/spock-comp.jpeg';
 
-const rock = {
+export const rock = {
     name: "Rock",
     win: ["Lizard", "Scissors"],
     src1: imgRock1,
     src2: imgRock2
 };
-const paper = {
+export const paper = {
     name: "Paper",
     win: ["Rock", "Spock"],
     src1: imgPaper1,
     src2: imgPaper2
 };
-const scissors = {
+export const scissors = {
     name: "Scissors",
     win: ["Paper", "Lizard"],
     src1: imgScissors1,
     src2: imgScissors2
 };
-const lizard = {
+export const lizard = {
     name: "Lizard",
     win: ["Spock", "Paper"],
     src1: imgLizard1,
     src2: imgLizard2
 };
-const spock = {
+export const spock = {
     name: "Spock",
     win: ["Scissors", "Rock"],
     src1: imgSpock1,
