@@ -34,7 +34,36 @@ const MainPage = () => {
                 </div>
               </div>
               <div className='buttons'>
-                <a onClick={goSinglePlayer} className="btn-mp">REGLAS</a>
+                <a type="button" classname="btn-mp" id="modal" data-toggle="modal" data-target="#exampleModalCenter">REGLAS</a>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Reglas del juego</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <ul>
+                          <li>Tijera corta a Papel</li>
+                          <li>Papel tapa a Piedra</li>
+                          <li>Piedra aplasta a Lagarto</li>
+                          <li>Lagarto envenena a Spock</li>
+
+                          <li>Spock rompe a Tijera</li>
+                          <li>Tijera decapita a Lagarto</li>
+                          <li>Papel desautoriza a Spock</li>
+                          <li>Spock vaporiza a Piedra</li>
+                          <li>y como siempre, Piedra aplasta a Tijera</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <a type="button" className="btn-mp" data-dismiss="modal">Aceptar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className='buttons-content'>
                 <a onClick={goSinglePlayer} className="btn-mp">UN JUGADOR</a> 

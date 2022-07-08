@@ -75,6 +75,19 @@ body {
     transform: scale(1.1);
 }
 
+#modal {
+    font-weight: 900;
+}
+
+.modal-content{
+    background-color: rgb(35, 35, 35);
+    width: 90%;
+}
+
+.close {
+    color: white;
+}
+
 @media (min-width: 1200px) {
     .mainPage-container {
         bottom:7%;
