@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { selections } from './Selections';
+import { FaArrowDown } from "react-icons/fa";
 import win from '../images/winner.png';
 import Counter from './Counter';
 import GameCounter from './GameCounter';
@@ -74,6 +75,30 @@ const MultiPlayer = () => {
         }
     };
 
+    const iconByStateLeft = () => {
+            if (player1Selection == null && player2Selection == null) {
+                return(
+                   <>
+                        <div className='box-arrow'>
+                            <FaArrowDown className='arrow'/>
+                        </div>
+                   </>
+                );
+            }
+    } 
+
+    const iconByStateRight = () => {
+        if (player1Selection != null && player2Selection == null) {
+            return(
+               <>
+                    <div className='box-arrow'>
+                        <FaArrowDown className='arrow'/>
+                    </div>
+               </>
+            );
+        }
+}
+
     const renderStarting  = () => {
         if (state) {
              if (counterPlayer1 == 3) {
@@ -116,6 +141,7 @@ const MultiPlayer = () => {
                             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 game-container-multiplayer'>
                                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 game-left'>
                                     <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-content-multiplayer'>
+                                        {iconByStateLeft()}
                                         {selections.map((select, index) => (
                                             <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player1Selection)} src={select.src1} alt="imagen"/>
                                         ))}
@@ -126,6 +152,7 @@ const MultiPlayer = () => {
                                 </div>
                                 <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 game-right'>
                                     <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-content-multiplayer'>
+                                        {iconByStateRight()}
                                         {selections.map((select, index) => (
                                             <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player2Selection)} src={select.src2} alt="imagen"/>
                                         ))}

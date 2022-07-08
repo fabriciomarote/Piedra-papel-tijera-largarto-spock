@@ -13,6 +13,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    position:static;
 }
 
 .img-multiplayer {
@@ -61,5 +62,34 @@
 
 #btn-multi {
     font-size: 20px;
-    
 }
+
+.box-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    color: white;
+    width: 25px;
+    height: 30px;
+    margin-bottom: 20px;
+    animation: arrow 1s ease-in-out infinite;
+}
+
+.arrow:hover{
+    animation:arrow 1s ease-out infinite !important;
+}
+
+@keyframes arrow {
+    0% {
+    transform: translate(0px, 0px);
+    }
+    50% {
+    transform: translate(0px, 20px);
+    }
+    100% {
+    transform: translate(0px, 5px);
+    }
+    }

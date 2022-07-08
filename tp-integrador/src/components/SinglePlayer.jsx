@@ -65,7 +65,7 @@ const SinglePlayer = () => {
             setCounterUser(counterUser + 1);
             setMsgOutput("Ganaste el punto");
         } else if ( selection1.name == selection2.name) {
-            setMsgOutput("Han empatado el punto");
+            setMsgOutput("Han empatado");
         } else {
             setCounterComp(counterComp + 1);
             setMsgOutput("Perdiste el punto");
