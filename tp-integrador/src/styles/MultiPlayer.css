@@ -1,11 +1,9 @@
-
 .game-container-multiplayer {
     display: flex;
 }
 
 .game-medium {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -17,25 +15,25 @@
 }
 
 .img-multiplayer {
-    width: 110px;
+    width: 100px;
     border-radius: 150px;
-    opacity: .5;
+    opacity: .7;
     border-style:inset;
     border-width: 5px;
     border-color: brown;
     box-shadow: 0px 0px 20px rgb(149, 29, 29);
     padding: 5px;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
 }
 
 .img-multiplayer:hover {
-    opacity: 4.6;
+    opacity: 2.5;
     transform: scale(1.1);
 }
 
 .counter-multiplayer {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .selection-image-mp {
@@ -50,10 +48,6 @@
     margin: 10px;
 }
 
-.box-end-game {
-    margin-top: 10px;
-}
-
 .winner-image-multi {
     margin-left: 40px;
     width: 300px;
@@ -62,6 +56,33 @@
 
 #btn-multi {
     font-size: 20px;
+}
+
+.msg-end-mp {
+    font-size: 25px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
+
+.msg-output {
+    font-weight: 800;
+}
+
+.box-content-mp {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-style:solid;
+    border-width: 2px;
+    border-color: brown;
+    color: white;
+    box-shadow: 0px 0px 25px 
+    rgba(148, 23, 23, 0.9);
+    border-radius: 20px;
+    height: 100%;
+    padding: 0px;
 }
 
 .box-arrow {
@@ -91,5 +112,105 @@
     }
     100% {
     transform: translate(0px, 5px);
+    }
+}
+  
+@media (max-width: 1199px) and (min-width: 992px) {
+    .game-medium {
+        display: flex;
+        align-items: center;
+        height: 550px;
+    }
+    .selection-image-mp {
+        width: 140px;
+        margin: 0x;
+    }
+    .img-multiplayer {
+        width: 80px;
+        padding: 0px;
+        margin: 5px;
+    }
+    .msg-output {
+        font-size: 22px;
+    }
+    .arrow {
+        width: 30px;
+        height: 15px;
+    }
+}
+  
+@media (max-width: 991px) and (min-width: 768px) {
+    .selection-image-mp {
+        width: 100px;
+        margin: 0x;
+    }
+    .img-multiplayer {
+        width: 70px;
+        padding: 0px;
+        margin: 5px;
+    }
+    .msg-output {
+        font-size: 15px;
+    } 
+    #btn-multi {
+        font-size: 15px;
+    }
+    .arrow {
+        width: 30px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .game-container-multiplayer {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .game-left {
+        justify-content: center;
+        justify-content: left;
+    }
+    .game-medium {
+        justify-content: center;
+    }
+    .game-right {
+        justify-content: center;
+        justify-content: right;
+    }
+    .selection-image-mp {
+        width: 70px;
+        margin: 0x;
+        padding: 0px;
+        border-width: 5px;
+        margin-left: 20px;
+    }
+    .img-multiplayer {
+        width: 70px;
+        border-radius: 150px;
+    }
+    .msg-output {
+        font-size: 10px;
+    } 
+    #btn-multi {
+        font-size: 10px;
+    }
+    .msg-end-mp {
+        font-size: 10px;
+    }
+    .winner-image-multi {
+        margin-right: 35px;
+        width: 250px;
+        height: 250px;
+    }
+    .box-content-mp {
+        border-width: 2px;
+        border-radius: 20px;
+        height: 100%;
+        padding: 0px;
+    }
+    .arrow {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 20px;
     }
 }

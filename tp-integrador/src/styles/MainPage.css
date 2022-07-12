@@ -38,12 +38,10 @@ body {
 }
 
 .img-mp {
-    width: 110px;
     border-radius: 100px;
     border-style: inset;
     border-width: 5px;
     border-color: rgb(255, 255, 255);
-    margin: 20px;
 }
 
 .buttons {
@@ -60,7 +58,7 @@ body {
     justify-content:space-between;
     padding: 5px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .btn-mp {
@@ -81,7 +79,7 @@ body {
 
 .modal-content{
     background-color: rgb(35, 35, 35);
-    width: 90%;
+    width: 100%;
 }
 
 .close {
@@ -89,33 +87,49 @@ body {
 }
 
 @media (min-width: 1200px) {
+    .img-mp {
+        width: 100px;
+        margin: 15px;
+    }
     .mainPage-container {
-        bottom:7%;
+        bottom:10%;
         left: 35%; 
         width: 400px;
     }
 }
   
 @media (max-width: 1199px) and (min-width: 992px) {
+    .img-mp {
+        width: 100px;
+        margin: 15px;
+    }
     .mainPage-container {
-        bottom:7%;
+        bottom:10%;
         left: 30%; 
         width: 400px;
     }  
 }
   
 @media (max-width: 991px) and (min-width: 768px) {
+    .img-mp {
+        width: 100px;
+        margin: 15px;
+    }
     .mainPage-container {
-        bottom:7%;
+        bottom:10%;
         left: 25%; 
         width: 400px;
     }
 }
 
 @media (max-width: 767px) {
+    .img-mp {
+        width: 90px;
+        margin: 20px;
+    }
     .mainPage-container {
-        bottom:7%;
-        left: 10%; 
+        bottom:10%;
+        left: 13%; 
         width: 350px;
     }
 }

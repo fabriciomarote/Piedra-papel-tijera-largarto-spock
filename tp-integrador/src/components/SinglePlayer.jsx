@@ -22,14 +22,13 @@ const SinglePlayer = () => {
     const goBack = () => navigate('/');
 
     const randomChoice = () => {
-        const randomSelection =
-        selections[Math.floor(Math.random() * selections.length)];
-          setCompSelection(randomSelection);
-      };
+        const randomSelection = selections[Math.floor(Math.random() * selections.length)];
+        setCompSelection(randomSelection);
+    };
 
     const resetFullCounter = () => {
-        setCounterTotalUser(0)
-        setCounterTotalComp(0)
+        setCounterTotalUser(0);
+        setCounterTotalComp(0);
         setCounterUser(0);
         setCounterComp(0);
         setUserSelection(null);
@@ -58,7 +57,7 @@ const SinglePlayer = () => {
 
     const startingHandler = () => {
         setState(true);
-    }
+    };
 
     const compareAndSetStates = (selection1, selection2) => {
         if (selection1.win.includes(selection2.name)) {
@@ -72,7 +71,7 @@ const SinglePlayer = () => {
         }
     };
 
-    const renderStarting  = () => {
+    const renderStarting = () => {
         if (state) {
              if (counterUser === 3) {
                 return (
@@ -85,7 +84,7 @@ const SinglePlayer = () => {
                             </div>
                         </div> 
                     </>
-                )
+                );
             }
             else if (counterComp === 3) {
                 return (
@@ -98,7 +97,7 @@ const SinglePlayer = () => {
                             </div>  
                         </div>      
                     </>
-                )       
+                ) ;     
             }
             else {
                 return (
@@ -117,7 +116,7 @@ const SinglePlayer = () => {
                             {renderSelections()}
                         </div>
                     </>
-                )
+                );
             }
         } else {
             return (
@@ -130,7 +129,7 @@ const SinglePlayer = () => {
                         <span>SPOCK</span>
                     </div>
                 </>
-            )
+            );
         }
     };
 
@@ -148,8 +147,8 @@ const SinglePlayer = () => {
                         </div>
                     </div>
                 </>
-            )
-        } 
+            );
+        };
     };
 
     const renderByState = () => {

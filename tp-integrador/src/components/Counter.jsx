@@ -2,7 +2,7 @@ import '../styles/Counter.css';
 
 const Counter = (props) => {
 
-    const { player1, player2 } = props
+    const { player1, player2 } = props;
 
     return (
         <>
@@ -22,8 +22,7 @@ const Counter = (props) => {
                 </div>
             </div>
         </>
-    )
-
-}
+    );
+};
 
 export default Counter;

@@ -22,8 +22,8 @@ const MultiPlayer = () => {
     const goBack = () => navigate('/');
 
     const resetFullCounter = () => {
-        setCounterTotalPlayer1(0)
-        setCounterTotalPlayer2(0)
+        setCounterTotalPlayer1(0);
+        setCounterTotalPlayer2(0);
         setCounterPlayer1(0);
         setCounterPlayer2(0);
         resetPoint();
@@ -34,9 +34,9 @@ const MultiPlayer = () => {
         setCounterPlayer1(0);
         setCounterPlayer2(0);
         resetPoint();
-        if (counterPlayer1 == 3) {
+        if (counterPlayer1 === 3) {
             setCounterTotalPlayer1(counterTotalPlayer1 + 1);
-        } else if (counterPlayer2 == 3) {
+        } else if (counterPlayer2 === 3) {
             setCounterTotalPlayer2(counterTotalPlayer2 + 1);
         }
     };
@@ -50,7 +50,7 @@ const MultiPlayer = () => {
 
     const clickHandler = (value, selected) => {
         if (!buttonsBlocked) {
-            if (selected == player1Selection) {
+            if (selected === player1Selection) {
                 setPlayer1Selection(value);
             } else {
                 setPlayer2Selection(value);
@@ -67,7 +67,7 @@ const MultiPlayer = () => {
         if (selection1.win.includes(selection2.name)) {
             setCounterPlayer1(counterPlayer1 + 1);
             setMsgOutput("Ganó el punto jugador 1");
-        } else if ( selection1.name == selection2.name) {
+        } else if ( selection1.name === selection2.name) {
             setMsgOutput("Han empatado el punto");
         } else {
             setCounterPlayer2(counterPlayer2 + 1);
@@ -76,19 +76,19 @@ const MultiPlayer = () => {
     };
 
     const iconByStateLeft = () => {
-            if (player1Selection == null && player2Selection == null) {
-                return(
-                   <>
-                        <div className='box-arrow'>
-                            <FaArrowDown className='arrow'/>
-                        </div>
-                   </>
-                );
-            }
-    } 
+        if (player1Selection === null && player2Selection === null) {
+            return(
+                <>
+                    <div className='box-arrow'>
+                        <FaArrowDown className='arrow'/>
+                    </div>
+                </>
+            );
+        };
+    };
 
     const iconByStateRight = () => {
-        if (player1Selection != null && player2Selection == null) {
+        if (player1Selection != null && player2Selection === null) {
             return(
                <>
                     <div className='box-arrow'>
@@ -96,12 +96,12 @@ const MultiPlayer = () => {
                     </div>
                </>
             );
-        }
-}
+        };
+    };
 
     const renderStarting  = () => {
         if (state) {
-             if (counterPlayer1 == 3) {
+             if (counterPlayer1 === 3) {
                 return (
                     <>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
@@ -109,22 +109,22 @@ const MultiPlayer = () => {
                             <div className='box-end-game'>
                                 <div className='box-content'>
                                     <img className='winner-image-multi' src={win} alt="imagen"/>
-                                    <p className='msg-end'>¡Ganó la partida JUGADOR 1!</p>
+                                    <p className='msg-end-mp'>¡Ganó la partida JUGADOR 1!</p>
                                 </div>
                             </div>
                         </div> 
                     </>
                 );
             }
-            else if (counterPlayer2 == 3) {
+            else if (counterPlayer2 === 3) {
                 return (
                     <>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
                             <Counter player1={counterPlayer1} player2={counterPlayer2}/>
                             <div className='box-end-game'>
-                                <div className='box-content'>
+                                <div className='box-content-mp'>
                                     <img className='winner-image-multi' src={win} alt="imagen"/>
-                                    <p className='msg-end'>¡Ganó la partida JUGADOR 2!</p>
+                                    <p className='msg-end-mp'>¡Ganó la partida JUGADOR 2!</p>
                                 </div>
                             </div>  
                         </div>   
@@ -138,20 +138,20 @@ const MultiPlayer = () => {
                         <Counter player1={counterPlayer1} player2={counterPlayer2}/> 
                         </div> 
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 game-container-multiplayer'>
-                                <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 game-left'>
-                                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-content-multiplayer'>
+                            <div className='game-container-multiplayer'>
+                                <div className='col-lg-4 col-md-4 col-sm-4col-xs-1 game-left'>
+                                    <div className='box-buttons-content-multiplayer'>
                                         {iconByStateLeft()}
                                         {selections.map((select, index) => (
                                             <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player1Selection)} src={select.src1} alt="imagen"/>
                                         ))}
                                     </div>
                                 </div>
-                                <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 game-medium'>
+                                <div className='col-lg-4 col-md-4 col-sm-4 col-xs-10 game-medium'>
                                     {renderSelections()}
                                 </div>
-                                <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 game-right'>
-                                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-content-multiplayer'>
+                                <div className='col-lg-4 col-md-4 col-sm-4 col-xs-1 game-right'>
+                                    <div className='box-buttons-content-multiplayer'>
                                         {iconByStateRight()}
                                         {selections.map((select, index) => (
                                             <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player2Selection)} src={select.src2} alt="imagen"/>
@@ -183,12 +183,12 @@ const MultiPlayer = () => {
             return (
                 <>
                     <div className='box-selections-content'>
+                        <div className='msg-output'>
+                            <p className='msg-mp'>{msgOutput}</p>
+                        </div>
                         <div className='box-buttons-selected-content'>
                             <img className='selection-image-mp' src={player1Selection.src1} alt="imagen"/>
                             <img className='selection-image-mp' src={player2Selection.src2} alt="imagen"/>
-                        </div>
-                        <div className='msg-output'>
-                            <p className='msg'>{msgOutput}</p>
                         </div>
                         <div className='msg-output'>
                             <a onClick={resetPoint} className="btn-gp" id='btn-multi'>JUGAR SIGUIENTE PUNTO</a> 
@@ -201,13 +201,13 @@ const MultiPlayer = () => {
 
     const renderByState = () => {
         if (state) {
-            if (counterPlayer1 == 3 || counterPlayer2 == 3) {
+            if (counterPlayer1 === 3 || counterPlayer2 === 3) {
                 return (
                     <>
                         <a onClick={resetCounter} className="btn-gp" id='btn-navbar'>JUGAR OTRA PARTIDA</a>   
                     </>
                 );
-            }
+            };
             return (
                 <>
                     <a onClick={resetFullCounter} className="btn-gp">REINICIAR JUEGO</a>   
@@ -227,7 +227,7 @@ const MultiPlayer = () => {
         if (player1Selection != null && player2Selection != null) {
             compareAndSetStates(player1Selection, player2Selection);
             setButtonsBlocked(true);
-        }
+        };
     }, [player1Selection, player2Selection]);
 
     return (
@@ -235,7 +235,7 @@ const MultiPlayer = () => {
             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
                     <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-top'>
-                    <GameCounter player1={counterTotalPlayer1} player2={counterTotalPlayer2} namePlayer1={"JUGADOR 1"} namePlayer2={"JUGADOR 2"}/>
+                    <GameCounter player1={counterTotalPlayer1} player2={counterTotalPlayer2} namePlayer1={"JUG 1"} namePlayer2={"JUG 2"}/>
                     </div>    
                     <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-bottom'>
                         <a onClick={goBack} className="btn-gp">SALIR</a>

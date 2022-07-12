@@ -27,17 +27,21 @@
 
 .title-counter-total {
     color: rgb(255, 255, 255);
-    font-size: 12px;
+    font-size: 10px;
     margin: 1px;
 }
 
+.player {
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+}
+
 .point-total {
-    font-size:  40px;
+    font-size:  15px;
     font-weight: 900;
     color: rgb(255, 255, 255);
     width: 100px;
     border-radius: 5px;
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 20px;
 }
