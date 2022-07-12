@@ -26,17 +26,17 @@ const MainPage = () => {
                 </div>
               </div>
               <div className='buttons'>
-                <a type="button" classname="btn-mp" id="modal" data-toggle="modal" data-target="#exampleModalCenter">REGLAS</a>
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Reglas del juego</h5>
+                <a type="button" className="btn-mp" id="modal" data-toggle="modal" data-target="#exampleModalCenter">REGLAS</a>
+                <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLongTitle">Reglas del juego</h5>
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         <ul>
                           <li>Tijera corta a Papel</li>
                           <li>Papel tapa a Piedra</li>
@@ -50,7 +50,7 @@ const MainPage = () => {
                           <li>y como siempre, Piedra aplasta a Tijera</li>
                         </ul>
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <a type="button" className="btn-mp" data-dismiss="modal">Aceptar</a>
                       </div>
                     </div>
