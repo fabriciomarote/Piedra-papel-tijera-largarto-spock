@@ -1,4 +1,4 @@
-***Rock Paper Scissors Lizard Spock!***
+***¡Piedra Papel Tijera Lagarto Spock!***
 
 Página web Responsive desarrollada para Construccion de Interfaces UNQ.
 
