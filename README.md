@@ -1,10 +1,10 @@
-***¡Piedra Papel Tijera Lagarto Spock!***
+***¡Piedra Papel Tijera Lagarto o Spock!***
 
-Página web Responsive desarrollada para Construccion de Interfaces UNQ.
+Aplicación desarrollada para Construcción de Interfaces UNQ.
 
 Instrucciones:
 
-Como y que, descargar e instalar para correr el proyecto.
+Como y que, descargar e instalar para correr el proyecto:
 
 Primero es necesario instalar Node.js según su SO.
 
@@ -14,6 +14,6 @@ Ejecutar los siguientes comandos:
 
 * git clone https://github.com/fabriciomarote/unq-ui-fabricio-marote-trabajo-final.git
 * cd unq-ui-fabricio-marote-trabajo-final
-* cd tp-integrador,
-* npm install,
+* cd tp-integrador
+* npm install
 * npm start
