@@ -14,6 +14,5 @@ Ejecutar los siguientes comandos:
 
 * git clone https://github.com/fabriciomarote/unq-ui-fabricio-marote-trabajo-final.git
 * cd unq-ui-fabricio-marote-trabajo-final
-* cd tp-integrador
 * npm install
 * npm start
