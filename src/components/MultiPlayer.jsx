@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { selections } from './Selections';
 import { FaArrowDown } from "react-icons/fa";
-import win from '../images/winner.png';
+import win from '../media/winner.png';
 import Counter from './Counter';
 import GameCounter from './GameCounter';
+import Footer from './Footer';
 import '../styles/MultiPlayer.css';
+import '../styles/Footer.css';
 
 const MultiPlayer = () => {
 
@@ -245,6 +247,9 @@ const MultiPlayer = () => {
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game-multiplayer'>
                     {renderStarting()}
                 </div>    
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 footer'>
+                    <Footer/> 
+                </div>  
             </div>
         </>
     );

@@ -1,13 +1,13 @@
-import imgRock1 from '../images/rock-user.jpeg';
-import imgRock2 from '../images/rock-comp.jpeg';
-import imgPaper1 from '../images/paper-user.jpeg';
-import imgPaper2 from '../images/paper-comp.jpeg';
-import imgScissors1 from '../images/scissors-user.jpeg';
-import imgScissors2 from '../images/scissors-comp.jpeg';
-import imgLizard1 from '../images/lizard-user.jpeg';
-import imgLizard2 from '../images/lizard-comp.jpeg';
-import imgSpock1 from '../images/spock-user.jpeg';
-import imgSpock2 from '../images/spock-comp.jpeg';
+import imgRock1 from '../media/rock-user.jpeg';
+import imgRock2 from '../media/rock-comp.jpeg';
+import imgPaper1 from '../media/paper-user.jpeg';
+import imgPaper2 from '../media/paper-comp.jpeg';
+import imgScissors1 from '../media/scissors-user.jpeg';
+import imgScissors2 from '../media/scissors-comp.jpeg';
+import imgLizard1 from '../media/lizard-user.jpeg';
+import imgLizard2 from '../media/lizard-comp.jpeg';
+import imgSpock1 from '../media/spock-user.jpeg';
+import imgSpock2 from '../media/spock-comp.jpeg';
 
 export const rock = {
     name: "Rock",

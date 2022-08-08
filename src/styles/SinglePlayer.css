@@ -29,6 +29,7 @@
     display: grid;
     justify-content: center;
     margin-top: 10px;
+    height: 100%;
 }
 
 .player {
@@ -145,8 +146,8 @@
 
 .title {
     display: grid;
-    position: absolute;
     text-align: center;
+    align-items: center;
     color: white;
 }
 
@@ -163,7 +164,6 @@
     }
     .title {
         display: grid;
-        position: absolute;
         text-align: center;
         top: 50%;
         left: 39%;

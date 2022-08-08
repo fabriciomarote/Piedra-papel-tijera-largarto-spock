@@ -1,0 +1,17 @@
+.main-footer {
+  color: white;
+  font-size: medium;
+  text-align: center;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.hr {
+  color: brown;
+}
+
+.col-sm{
+  font-size: large;
+}

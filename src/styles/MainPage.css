@@ -7,6 +7,15 @@ body {
     width: 100%;
 }
 
+.icon {
+    color: white;
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
+    width:350px;
+    margin-top: -20px;
+}
+
 .mainPage-container {
     position: absolute;  
     display: grid;
@@ -17,7 +26,7 @@ body {
     background-color: rgb(35, 35, 35);
     box-shadow: 0px 0px 50px 
     rgba(148, 23, 23, 2.9);
-    padding: 30px;
+    padding: 50px;
 }
 
 .imagen {
@@ -48,17 +57,19 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:center;
-    padding: 20px;
+    padding: 10px;
     color: white;
     font-size: 18px;
+   
 }
 
 .buttons-content {
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
     padding: 5px;
     color: white;
     font-size: 16px;
+    margin-bottom: -20px;
 }
 
 .btn-mp {
@@ -94,7 +105,7 @@ body {
     .mainPage-container {
         bottom:10%;
         left: 35%; 
-        width: 400px;
+        width: 450px;
     }
 }
   
@@ -128,8 +139,11 @@ body {
         margin: 20px;
     }
     .mainPage-container {
-        bottom:10%;
-        left: 13%; 
+        bottom:8%;
+        left: 3%; 
         width: 350px;
+    }
+    .icon {
+        width:300px;
     }
 }
