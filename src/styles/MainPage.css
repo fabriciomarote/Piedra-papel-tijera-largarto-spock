@@ -12,8 +12,7 @@ body {
     display: flex;
     justify-content: right;
     cursor: pointer;
-    width:350px;
-    margin-top: -20px;
+    margin-top: -2px;
 }
 
 .mainPage-container {
@@ -134,17 +133,17 @@ body {
 }
 
 @media (max-width: 767px) {
+    body {
+        height: 50px;
+    }
     .img-mp {
         width: 90px;
         margin: 20px;
     }
     .mainPage-container {
         top:10%;
-        left: 3%; 
+        left: 2.5%; 
         max-width: 100%;
         max-height: 100%;
-    }
-    .icon {
-        width:300px;
     }
 }
