@@ -22,9 +22,15 @@ const MultiPlayer = () => {
     const [player1Selection, setPlayer1Selection] = useState(null);
     const [player2Selection, setPlayer2Selection] = useState(null);
     const [isMuted, setIsMuted] = useState(false);
-    const [playGanador, { stop: stopGanador }] = useSound(Ganador);
-    const [playPerdedor, { stop: stopPerdedor }] = useSound(Perdedor);
-    const [playEmpate, { stop: stopEmpate }] = useSound(Empate);
+    const [playGanador, { stop: stopGanador }] = useSound(Ganador, {
+        volume: 0.5,
+       }); 
+    const [playPerdedor, { stop: stopPerdedor }] = useSound(Perdedor, {
+        volume: 0.5,
+       }); 
+    const [playEmpate, { stop: stopEmpate }] = useSound(Empate, {
+        volume: 0.5,
+       }); 
     const [msgOutput, setMsgOutput] = useState("");
     const [state, setState] = useState(false);
     const [buttonsBlocked, setButtonsBlocked] = useState(false);

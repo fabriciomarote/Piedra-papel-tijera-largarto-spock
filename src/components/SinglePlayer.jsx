@@ -22,9 +22,15 @@ const SinglePlayer = () => {
     const [userSelection, setUserSelection] = useState(null);
     const [compSelection, setCompSelection] = useState(null);
     const [isMuted, setIsMuted] = useState(false);
-    const [playGanador, { stop: stopGanador }] = useSound(Ganador);
-    const [playPerdedor, { stop: stopPerdedor }] = useSound(Perdedor);
-    const [playEmpate, { stop: stopEmpate }] = useSound(Empate);
+    const [playGanador, { stop: stopGanador }] = useSound(Ganador, {
+        volume: 0.5,
+       }); 
+    const [playPerdedor, { stop: stopPerdedor }] = useSound(Perdedor, {
+        volume: 0.5,
+       }); 
+    const [playEmpate, { stop: stopEmpate }] = useSound(Empate, {
+        volume: 0.5,
+       }); 
     const [msgOutput, setMsgOutput] = useState("");
     const [state, setState] = useState(false);
 
