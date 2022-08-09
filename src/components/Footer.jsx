@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <hr className='hr'/>
         <p className="col-sm">
-          &copy;{new Date().getFullYear()} {"Desarrollada por Fabricio Marote para la materia Construcción de Interfaces, UNQ."}
+          &copy;{new Date().getFullYear()} {"Desarrollada por Fabricio Marote para la materia Construcción de Interfaces de Usuarios, UNQ."}
         </p>
       </div>
     </div>
