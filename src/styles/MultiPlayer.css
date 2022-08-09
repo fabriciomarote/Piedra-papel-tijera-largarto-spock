@@ -190,9 +190,11 @@
     }
     .msg-output {
         font-size: 10px;
+        margin-left: 30px;
     } 
     #btn-multi {
         font-size: 10px;
+        margin-left: 0px;
     }
     .msg-end-mp {
         font-size: 10px;
@@ -213,4 +215,5 @@
         height: 15px;
         margin-bottom: 20px;
     }
+    
 }

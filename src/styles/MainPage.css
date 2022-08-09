@@ -103,7 +103,7 @@ body {
         margin: 15px;
     }
     .mainPage-container {
-        bottom:10%;
+        top:15%;
         left: 35%; 
         width: 450px;
     }
@@ -115,7 +115,7 @@ body {
         margin: 15px;
     }
     .mainPage-container {
-        bottom:10%;
+        top:10%;
         left: 30%; 
         width: 400px;
     }  
@@ -127,7 +127,7 @@ body {
         margin: 15px;
     }
     .mainPage-container {
-        bottom:10%;
+        bottom:15%;
         left: 25%; 
         width: 400px;
     }

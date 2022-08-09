@@ -15,3 +15,39 @@
 .col-sm{
   font-size: large;
 }
+
+@media (min-width: 1200px) {
+  .col-sm{
+    font-size: large;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .img-mp {
+      width: 100px;
+      margin: 15px;
+  }
+  .mainPage-container {
+      top:10%;
+      left: 30%; 
+      width: 400px;
+  }  
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .img-mp {
+      width: 100px;
+      margin: 15px;
+  }
+  .mainPage-container {
+      bottom:15%;
+      left: 25%; 
+      width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-sm{
+    font-size:xx-small;
+  }
+}
