@@ -178,11 +178,11 @@
         justify-content: right;
     }
     .selection-image-mp {
-        width: 70px;
+        width: 80px;
         margin: 0x;
         padding: 0px;
         border-width: 5px;
-        margin-left: 20px;
+        margin-left: 15px;
     }
     .img-multiplayer {
         width: 70px;
@@ -190,7 +190,7 @@
     }
     .msg-output {
         font-size: 10px;
-        margin-left: 30px;
+        margin-left: 40px;
     } 
     #btn-multi {
         font-size: 10px;
@@ -215,5 +215,7 @@
         height: 15px;
         margin-bottom: 20px;
     }
-    
+    .box-buttons-selected-content {
+        margin-left: 5px;
+    }
 }
