@@ -218,7 +218,7 @@
 
 @media (max-width: 767px) {
     .navbar {
-        width: 500px;
+        max-width: 500px;
         height: 100%;
     }
     .title {
@@ -228,9 +228,6 @@
     .title span {
         font-size: 8vw;
     }
-    .game-container-singlePlayer  {
-        width:100%;
-    }
     .img {
         width: 60px;
         padding: 5px;
@@ -238,7 +235,7 @@
         margin-top: 40px;
     }
     .selection-image {
-        width: 120px;
+        width: 110px;
         border-radius: 150px;
         border-style:inset;
         border-width: 5px;
@@ -246,7 +243,7 @@
         box-shadow: 0px 0px 25px 
         rgba(148, 23, 23, 0.9);
         padding: 5px;
-        margin: 20px;
+        margin: 10px;
     }
     .msg-output {
         font-size: 50px;
