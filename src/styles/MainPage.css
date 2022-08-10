@@ -16,6 +16,12 @@ body {
 }
 
 .mainPage-container {
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35);
+}
+
+.mainPage-content {
     position: absolute;  
     display: grid;
     justify-content: center;
@@ -37,6 +43,7 @@ body {
 .images-game {
     display: grid;
     justify-content: center;
+    margin-left: 20px;
 }
 
 .box-top-images, .box-medium-images, .box-bottom-images {
@@ -101,7 +108,7 @@ body {
         width: 100px;
         margin: 15px;
     }
-    .mainPage-container {
+    .mainPage-content {
         top:15%;
         left: 35%; 
         width: 450px;
@@ -113,7 +120,7 @@ body {
         width: 100px;
         margin: 15px;
     }
-    .mainPage-container {
+    .mainPage-content {
         top:10%;
         left: 30%; 
         width: 400px;
@@ -125,25 +132,32 @@ body {
         width: 100px;
         margin: 15px;
     }
-    .mainPage-container {
-        bottom:15%;
+
+    .images-game {
+        display: grid;
+        justify-content: center;
+        margin-left: 60px;
+    }
+    .mainPage-content {
+        top:10%;
         left: 25%; 
-        width: 400px;
+        max-width: 400px;
+        max-height: 100%;
     }
 }
 
 @media (max-width: 767px) {
     body {
-        height: 50px;
+        height: 500px;
     }
     .img-mp {
         width: 90px;
         margin: 20px;
     }
-    .mainPage-container {
+    .mainPage-content {
         top:10%;
-        left: 5.5%; 
-        max-width: 100%;
+        left: 6%; 
+        max-width: 400px;
         max-height: 100%;
     }
 }

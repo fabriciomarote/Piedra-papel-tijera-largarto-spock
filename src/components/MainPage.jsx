@@ -1,19 +1,35 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { rock, paper, scissors, lizard, spock } from './Selections';
-import Music from '../media/music.mp3'
-import useSound from 'use-sound';
+import { useSound }  from 'use-sound';
+import Boton from '../media/botones3.mp3'
 import '../styles/MainPage.css';
 
 const MainPage = () => {
 
+  const [isMuted, setIsMuted] = useState(false);
+  const [playBoton, { stop: stopBoton }] = useSound(Boton, {
+    volume: 0.1,
+  }); 
   const navigate = useNavigate();
-  const goSinglePlayer = () => navigate('/singlePlayer');
-  const goMultiPlayer = () => navigate('/multiPlayer');
+  const goSinglePlayer = () => {
+    navigate('/singlePlayer');
+    if (!isMuted){
+      playBoton();
+    } 
+  };
+  
+  const goMultiPlayer = () => {
+    navigate('/multiPlayer');
+    if (!isMuted){
+      playBoton();
+    } 
+  }; 
 
     return (
-        <>
-          <div className='mainPage-container'>
+      <>
+        <div className='mainPage-content'> 
+          <div className='mainPage-container col-lg-12 col-md-12 col-sm-12 col-xs-12'> 
             <div className='box-container'>
               <div className='images-game'>
                 <div className='box-top-images'>
@@ -29,7 +45,7 @@ const MainPage = () => {
                 </div>
               </div>
               <div className='buttons'>
-                <a type="button" className="btn-mp" id="modal" data-toggle="modal" data-target="#exampleModalCenter">REGLAS</a>
+                <a type="button" className="btn-mp" id="modal" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => playBoton()}>REGLAS</a>
                 <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
@@ -66,8 +82,9 @@ const MainPage = () => {
               </div>
             </div>
           </div>
-        </>
-      );
+        </div>
+      </>
+    );
 };
     
 export default MainPage;

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { selections } from './Selections';
-import win from '../media/winner.png';
-import lose from '../media/loser.png';
+import { useSound }  from 'use-sound';
+import Win from '../media/winner.png';
+import Lose from '../media/loser.png';
 import Ganador from '../media/ganador.mp3'
-import Perdedor from '../media/derrota.mp3'
+import Perdedor from '../media/fallo.mp3'
 import Empate from '../media/empate.mp3'
-import useSound from 'use-sound';
+import Boton from '../media/botones3.mp3'
+import SelectBoton from '../media/botones2.mp3'
 import Counter from './Counter';
 import GameCounter from './GameCounter';
 import Footer from './Footer';
@@ -23,19 +25,30 @@ const SinglePlayer = () => {
     const [compSelection, setCompSelection] = useState(null);
     const [isMuted, setIsMuted] = useState(false);
     const [playGanador, { stop: stopGanador }] = useSound(Ganador, {
-        volume: 0.5,
+        volume: 0.2,
        }); 
     const [playPerdedor, { stop: stopPerdedor }] = useSound(Perdedor, {
-        volume: 0.5,
+        volume: 0.2,
        }); 
     const [playEmpate, { stop: stopEmpate }] = useSound(Empate, {
-        volume: 0.5,
+        volume: 0.2,
        }); 
+    const [playBoton, { stop: stopBoton }] = useSound(Boton, {
+    volume: 0.1,
+    });
+    const [playSelectBoton, { stop: stopSelectBoton }] = useSound(SelectBoton, {
+        volume: 0.1,
+    }); 
     const [msgOutput, setMsgOutput] = useState("");
     const [state, setState] = useState(false);
 
     const navigate = useNavigate();
-    const goBack = () => navigate('/');
+    const goBack = () => {
+        if (!isMuted){
+            playBoton();
+        } 
+        navigate('/');
+    };
 
     const randomChoice = () => {
         const randomSelection = selections[Math.floor(Math.random() * selections.length)];
@@ -54,6 +67,9 @@ const SinglePlayer = () => {
         stopEmpate();
         setMsgOutput("");
         setState(false);
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const resetCounter = () => {
@@ -70,15 +86,24 @@ const SinglePlayer = () => {
         } else if (counterComp === 3) {
             setCounterTotalComp(counterTotalComp + 1)
         }
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const clickHandler = (value) => {
         setUserSelection(value);
         randomChoice();
+        if (!isMuted){
+            playSelectBoton();
+        }
     };
 
     const startingHandler = () => {
         setState(true);
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const changeIsMuted = () => {
@@ -147,7 +172,7 @@ const SinglePlayer = () => {
                         <Counter player1={counterUser} player2={counterComp}/>
                         <div className='box-end-game'>
                             <div className='box-content'>
-                                <img className='winner-image' src={win} alt="imagen"/>
+                                <img className='winner-image' src={Win} alt="imagen"/>
                                 <p className='msg-end'>¡Ganaste la partida!</p>
                             </div>
                         </div> 
@@ -160,7 +185,7 @@ const SinglePlayer = () => {
                         <Counter player1={counterUser} player2={counterComp}/>
                         <div className='box-end-game'>
                             <div className='box-content'>
-                                <img className='loser-image' src={lose} alt="imagen"/>
+                                <img className='loser-image' src={Lose} alt="imagen"/>
                                 <p className='msg-end'>¡Perdiste la partida!</p>
                             </div>  
                         </div>      
@@ -177,7 +202,7 @@ const SinglePlayer = () => {
                             <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 game-container-singlePlayer'>
                                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-content'>
                                     {selections.map((select, index) => (
-                                        <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src1} alt="imagen"/>
+                                        <img key={index} className='img' onClick={() => clickHandler(select)} src={select.src1} alt="boton"/>
                                     ))}
                                 </div>
                             </div>
@@ -205,8 +230,8 @@ const SinglePlayer = () => {
         if (userSelection != null && compSelection != null) {
             return (
                 <>
-                    <div className='box-selections-content'>
-                        <div className='box-buttons-selected-content'>
+                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-selections-content'>
+                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-selected-content'>
                             <img className='selection-image' src={userSelection.src1} alt="imagen"/>
                             <img className='selection-image' src={compSelection.src2} alt="imagen"/>
                         </div>

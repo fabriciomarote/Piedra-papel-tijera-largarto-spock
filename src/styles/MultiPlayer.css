@@ -131,7 +131,7 @@
         margin: 5px;
     }
     .msg-output {
-        font-size: 22px;
+        font-size: 15px;
     }
     .arrow {
         width: 30px;
@@ -190,14 +190,17 @@
     }
     .msg-output {
         font-size: 10px;
-        margin-left: 40px;
+        margin-left: 30px;
     } 
     #btn-multi {
         font-size: 10px;
-        margin-left: 0px;
+        margin-left: 10px;
     }
     .msg-end-mp {
         font-size: 10px;
+    }
+    .msg-mp {
+        margin-left: 10px;
     }
     .winner-image-multi {
         margin-right: 35px;

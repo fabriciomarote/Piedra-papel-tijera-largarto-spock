@@ -2,16 +2,17 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { selections } from './Selections';
 import { FaArrowDown } from "react-icons/fa";
-import Ganador from '../media/ganador2.mp3'
+import { useSound }  from 'use-sound';
+import Ganador from '../media/ganador.mp3'
 import Perdedor from '../media/derrota2.mp3'
 import Empate from '../media/empate.mp3'
-import useSound from 'use-sound';
-import win from '../media/winner.png';
-import Counter from './Counter';
+import Boton from '../media/botones3.mp3'
+import SelectBoton from '../media/botones2.mp3'
+import Win from '../media/winner.png';
 import GameCounter from './GameCounter';
+import Counter from './Counter';
 import Footer from './Footer';
 import '../styles/MultiPlayer.css';
-import '../styles/Footer.css';
 
 const MultiPlayer = () => {
 
@@ -23,19 +24,30 @@ const MultiPlayer = () => {
     const [player2Selection, setPlayer2Selection] = useState(null);
     const [isMuted, setIsMuted] = useState(false);
     const [playGanador, { stop: stopGanador }] = useSound(Ganador, {
-        volume: 0.5,
-       }); 
+        volume: 0.2,
+    }); 
     const [playPerdedor, { stop: stopPerdedor }] = useSound(Perdedor, {
-        volume: 0.5,
-       }); 
+        volume: 0.2,
+    }); 
     const [playEmpate, { stop: stopEmpate }] = useSound(Empate, {
-        volume: 0.5,
-       }); 
+        volume: 0.2,
+    });
+    const [playBoton, { stop: stopBoton }] = useSound(Boton, {
+        volume: 0.1,
+    }); 
+    const [playSelectBoton, { stop: stopSelectBoton }] = useSound(SelectBoton, {
+        volume: 0.1,
+    });  
     const [msgOutput, setMsgOutput] = useState("");
-    const [state, setState] = useState(false);
+    const [stateOn, setStateOn] = useState(false);
     const [buttonsBlocked, setButtonsBlocked] = useState(false);
     const navigate = useNavigate();
-    const goBack = () => navigate('/');
+    const goBack = () => {
+        if (!isMuted){
+            playBoton();
+        } 
+        navigate('/');
+    };
 
     const resetFullCounter = () => {
         setCounterTotalPlayer1(0);
@@ -43,7 +55,10 @@ const MultiPlayer = () => {
         setCounterPlayer1(0);
         setCounterPlayer2(0);
         resetPoint();
-        setState(false);
+        setStateOn(false);
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const resetCounter = () => {
@@ -55,6 +70,9 @@ const MultiPlayer = () => {
         } else if (counterPlayer2 === 3) {
             setCounterTotalPlayer2(counterTotalPlayer2 + 1);
         }
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const resetPoint = () => {
@@ -65,42 +83,52 @@ const MultiPlayer = () => {
         stopEmpate();
         setMsgOutput("");
         setButtonsBlocked(false);
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const clickHandler = (value, selected) => {
         if (!buttonsBlocked) {
+            if (!isMuted){
+                playSelectBoton();
+            } 
             if (selected === player1Selection) {
                 setPlayer1Selection(value);
             } else {
                 setPlayer2Selection(value);
             }   
-        };       
+        };      
     };
             
 
     const startingHandler = () => {
-        setState(true);
+        setStateOn(true);
+        if (!isMuted){
+            playBoton();
+        } 
     };
 
     const compareAndSetStates = (selection1, selection2) => {
-        if (selection1.win.includes(selection2.name)) {
+        if (selection1.win.includes(selection2.name) ) {
             setCounterPlayer1(counterPlayer1 + 1);
-            setMsgOutput("Ganó el punto jugador 1");
-            if (!isMuted){
+            setMsgOutput("Ganó el punto Jugador 1");
+            if (!isMuted && (counterPlayer1 <= 2 || counterPlayer2 <= 2)) {
                 playGanador();
             }
         } else if ( selection1.name === selection2.name) {
             setMsgOutput("Han empatado el punto");
-            if (!isMuted){
+            if (!isMuted) {
                 playEmpate();
             }
         } else {
             setCounterPlayer2(counterPlayer2 + 1);
-            setMsgOutput("Ganó el punto jugador 2");
-            if (!isMuted){
-                playPerdedor();
+            setMsgOutput("Ganó el punto Jugador 2");
+            if (!isMuted && (counterPlayer1 <= 2 || counterPlayer2 <= 2)) {
+                playGanador();
             }
         }
+
     };
 
     const changeIsMuted = () => {
@@ -164,8 +192,8 @@ const MultiPlayer = () => {
         };
     };
 
-    const renderStarting  = () => {
-        if (state) {
+    const renderStarting = () => {
+        if (stateOn) {
              if (counterPlayer1 === 3) {
                 return (
                     <>
@@ -173,8 +201,8 @@ const MultiPlayer = () => {
                             <Counter player1={counterPlayer1} player2={counterPlayer2}/>
                             <div className='box-end-game'>
                                 <div className='box-content'>
-                                    <img className='winner-image-multi' src={win} alt="imagen"/>
-                                    <p className='msg-end-mp'>¡Ganó la partida JUGADOR 1!</p>
+                                    <img className='winner-image-multi' src={Win} alt="imagen"/>
+                                    <p className='msg-end-mp'>¡Ganó la partida Jugador 1!</p>
                                 </div>
                             </div>
                         </div> 
@@ -188,8 +216,8 @@ const MultiPlayer = () => {
                             <Counter player1={counterPlayer1} player2={counterPlayer2}/>
                             <div className='box-end-game'>
                                 <div className='box-content-mp'>
-                                    <img className='winner-image-multi' src={win} alt="imagen"/>
-                                    <p className='msg-end-mp'>¡Ganó la partida JUGADOR 2!</p>
+                                    <img className='winner-image-multi' src={Win} alt="imagen"/>
+                                    <p className='msg-end-mp'>¡Ganó la partida Jugador 2!</p>
                                 </div>
                             </div>  
                         </div>   
@@ -208,7 +236,7 @@ const MultiPlayer = () => {
                                     <div className='box-buttons-content-multiplayer'>
                                         {iconByStateLeft()}
                                         {selections.map((select, index) => (
-                                            <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player1Selection)} src={select.src1} alt="imagen"/>
+                                            <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player1Selection)} src={select.src1} alt="boton"/>
                                         ))}
                                     </div>
                                 </div>
@@ -219,7 +247,7 @@ const MultiPlayer = () => {
                                     <div className='box-buttons-content-multiplayer'>
                                         {iconByStateRight()}
                                         {selections.map((select, index) => (
-                                            <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player2Selection)} src={select.src2} alt="imagen"/>
+                                            <img key={index} className='img-multiplayer' onClick={() => clickHandler(select, player2Selection)} src={select.src2} alt="boton"/>
                                         ))}
                                     </div>
                                 </div>
@@ -228,7 +256,8 @@ const MultiPlayer = () => {
                     </>
                 );
             };
-        } else {
+        } 
+        else {
             return (
                 <>
                     <div className='title'>
@@ -265,7 +294,7 @@ const MultiPlayer = () => {
     };
 
     const renderByState = () => {
-        if (state) {
+        if (stateOn) {
             if (counterPlayer1 === 3 || counterPlayer2 === 3) {
                 return (
                     <>
