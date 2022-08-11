@@ -15,12 +15,6 @@ body {
     margin-top: -2px;
 }
 
-.mainPage-container {
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(35, 35, 35);
-}
-
 .mainPage-content {
     position: absolute;  
     display: grid;
@@ -108,6 +102,11 @@ body {
         width: 100px;
         margin: 15px;
     }
+    .images-game {
+        display: grid;
+        justify-content: center;
+        margin-left: 0px;
+    }
     .mainPage-content {
         top:15%;
         left: 35%; 
@@ -136,8 +135,9 @@ body {
     .images-game {
         display: grid;
         justify-content: center;
-        margin-left: 60px;
+        margin-left: 0px;
     }
+
     .mainPage-content {
         top:10%;
         left: 25%; 
@@ -150,13 +150,18 @@ body {
     body {
         height: 500px;
     }
+    .images-game {
+        display: grid;
+        justify-content: center;
+        margin-left: 0px;
+    }
     .img-mp {
         width: 90px;
         margin: 20px;
     }
     .mainPage-content {
         top:10%;
-        left: 1.25%; 
+        left: 1.10%; 
         max-width: 100%;
         max-height: 100%;
     }

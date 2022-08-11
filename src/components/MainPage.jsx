@@ -29,7 +29,7 @@ const MainPage = () => {
     return (
       <>
         <div className='mainPage-content'> 
-          <div className='mainPage-container col-lg-12 col-md-12 col-sm-12 col-xs-12'> 
+          <div className='mainPage-container'> 
             <div className='box-container'>
               <div className='images-game'>
                 <div className='box-top-images'>
