@@ -156,8 +156,8 @@ body {
     }
     .mainPage-content {
         top:10%;
-        left: 6%; 
-        max-width: 400px;
+        left: 0%; 
+        max-width: 100%;
         max-height: 100%;
     }
 }

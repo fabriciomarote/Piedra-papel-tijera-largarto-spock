@@ -147,9 +147,7 @@ const SinglePlayer = () => {
         if (selection1.win.includes(selection2.name)) {
             setCounterUser(counterUser + 1);
             setMsgOutput("Ganaste el punto");
-            if (!isMuted){
-                playGanador();
-            }
+            
         } else if ( selection1.name === selection2.name) {
             setMsgOutput("Han empatado");
             if (!isMuted){
@@ -158,15 +156,16 @@ const SinglePlayer = () => {
         } else {
             setCounterComp(counterComp + 1);
             setMsgOutput("Perdiste el punto");
-            if (!isMuted){
-                playPerdedor();
-            }
+            
         }
     };
 
     const renderStarting = () => {
         if (state) {
              if (counterUser === 3) {
+                if (!isMuted){
+                    playGanador();
+                }
                 return (
                     <>
                         <Counter player1={counterUser} player2={counterComp}/>
@@ -180,6 +179,9 @@ const SinglePlayer = () => {
                 );
             }
             else if (counterComp === 3) {
+                if (!isMuted && counterComp > 2){
+                    playPerdedor();
+                }
                 return (
                     <>
                         <Counter player1={counterUser} player2={counterComp}/>

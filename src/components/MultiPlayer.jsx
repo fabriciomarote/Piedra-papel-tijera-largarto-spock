@@ -113,9 +113,7 @@ const MultiPlayer = () => {
         if (selection1.win.includes(selection2.name) ) {
             setCounterPlayer1(counterPlayer1 + 1);
             setMsgOutput("Ganó el punto Jugador 1");
-            if (!isMuted && (counterPlayer1 <= 2 || counterPlayer2 <= 2)) {
-                playGanador();
-            }
+          
         } else if ( selection1.name === selection2.name) {
             setMsgOutput("Han empatado el punto");
             if (!isMuted) {
@@ -124,11 +122,10 @@ const MultiPlayer = () => {
         } else {
             setCounterPlayer2(counterPlayer2 + 1);
             setMsgOutput("Ganó el punto Jugador 2");
-            if (!isMuted && (counterPlayer1 <= 2 || counterPlayer2 <= 2)) {
-                playGanador();
-            }
         }
-
+        if (!isMuted && (counterPlayer1 === 3 || counterPlayer2 === 3)) {
+            playGanador();
+        }
     };
 
     const changeIsMuted = () => {
@@ -195,6 +192,9 @@ const MultiPlayer = () => {
     const renderStarting = () => {
         if (stateOn) {
              if (counterPlayer1 === 3) {
+                if (!isMuted) {
+                    playGanador();
+                }
                 return (
                     <>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
@@ -210,6 +210,9 @@ const MultiPlayer = () => {
                 );
             }
             else if (counterPlayer2 === 3) {
+                if (!isMuted) {
+                    playGanador();
+                }
                 return (
                     <>
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
