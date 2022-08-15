@@ -12,13 +12,9 @@
   color: brown;
 }
 
-.col-sm{
-  font-size: large;
-}
-
 @media (min-width: 1200px) {
   .col-sm{
-    font-size: large;
+    font-size: 15px;
   }
 }
 

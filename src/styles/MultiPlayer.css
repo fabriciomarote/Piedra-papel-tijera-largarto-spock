@@ -1,5 +1,6 @@
 .game-container-multiplayer {
     display: flex;
+   
 }
 
 .game-medium {
@@ -162,6 +163,9 @@
 }
 
 @media (max-width: 767px) {
+    .content-game-multiplayer {
+        height: 60vh;
+    }
     .game-container-multiplayer {
         margin-top: 10px;
         width: 100%;
