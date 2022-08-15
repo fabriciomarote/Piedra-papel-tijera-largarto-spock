@@ -1,6 +1,5 @@
 .game-container-multiplayer {
     display: flex;
-   
 }
 
 .game-medium {
@@ -164,7 +163,7 @@
 
 @media (max-width: 767px) {
     .content-game-multiplayer {
-        height: 60vh;
+        height: 70vh;
     }
     .game-container-multiplayer {
         margin-top: 10px;
@@ -183,13 +182,11 @@
     }
     .selection-image-mp {
         width: 80px;
-        margin: 0x;
-        padding: 0px;
         border-width: 5px;
         margin-left: 10px;
     }
     .img-multiplayer {
-        width: 70px;
+        width: 55px;
         border-radius: 150px;
     }
     .msg-output {

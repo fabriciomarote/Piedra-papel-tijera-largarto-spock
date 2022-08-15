@@ -316,7 +316,7 @@ const MultiPlayer = () => {
 
     return (
         <>
-            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
+            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container-multiplayer'>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
                     <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-top'>
                     <GameCounter player1={counterTotalPlayer1} player2={counterTotalPlayer2} namePlayer1={"JUG 1"} namePlayer2={"JUG 2"}/>
