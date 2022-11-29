@@ -137,10 +137,6 @@
 }
 
 @media (min-width: 1200px) {
-    .navbar {
-        width: 1400px;
-        height: 100%;
-    }
     .title {
         display: grid;
         text-align: center;
@@ -156,10 +152,6 @@
 }
   
 @media (max-width: 1199px) and (min-width: 992px) {
-    .navbar {
-        width: 1150px;
-        height: 100%;
-    }
     .title {
         top: 50%;
         left: 37%;
@@ -173,10 +165,6 @@
 }
   
 @media (max-width: 991px) and (min-width: 768px) {
-    .navbar {
-        width: 900px;
-        height: 100%;
-    }
     .title {
         top: 50%;
         left: 34%;
@@ -196,10 +184,6 @@
 }
 
 @media (max-width: 767px) {
-    .navbar {
-        max-width: 500px;
-        height: 100%;
-    }
     .title {
         top: 50%;
         left: 32%;
@@ -218,7 +202,7 @@
         height: 80%;
     }
     .msg-end {
-        font-size: 35px;
+        font-size: 30px;
     }
     .selection-image {
         width: 100px;

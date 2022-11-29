@@ -216,8 +216,8 @@ const SinglePlayer = () => {
         if (userSelection != null && compSelection != null) {
             return (
                 <>
-                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-selections-content'>
-                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 box-buttons-selected-content'>
+                    <div className='box-selections-content'>
+                        <div className='box-buttons-selected-content'>
                             <img className='selection-image' src={userSelection.src1} alt="imagen"/>
                             <img className='selection-image' src={compSelection.src2} alt="imagen"/>
                         </div>

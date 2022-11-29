@@ -6,10 +6,8 @@ import { useSound }  from 'use-sound';
 import Ganador from '../media/ganador.mp3'
 import Boton from '../media/botones3.mp3'
 import SelectBoton from '../media/botones2.mp3'
-import Win from '../media/winner.png';
 import GameCounter from './GameCounter';
 import Counter from './Counter';
-import Footer from './Footer';
 import '../styles/MultiPlayer.css';
 
 const MultiPlayer = () => {
@@ -184,13 +182,10 @@ const MultiPlayer = () => {
                 }
                 return (
                     <>
-                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
+                        <div className='counter-multiplayer'>
                             <Counter player1={counterPlayer1} player2={counterPlayer2}/>
                             <div className='box-end-game'>
-                                <div className='box-content'>
-                                    <img className='winner-image-multi' src={Win} alt="imagen"/>
-                                    <p className='msg-end-mp'>¡Ganó la partida Jugador 1!</p>
-                                </div>
+                                <p className='msg-end-mp'>¡Ganó la partida Jugador 1!</p>
                             </div>
                         </div> 
                     </>
@@ -202,13 +197,10 @@ const MultiPlayer = () => {
                 }
                 return (
                     <>
-                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
+                        <div className='counter-multiplayer'>
                             <Counter player1={counterPlayer1} player2={counterPlayer2}/>
                             <div className='box-end-game'>
-                                <div className='box-content-mp'>
-                                    <img className='winner-image-multi' src={Win} alt="imagen"/>
-                                    <p className='msg-end-mp'>¡Ganó la partida Jugador 2!</p>
-                                </div>
+                                <p className='msg-end-mp'>¡Ganó la partida Jugador 2!</p>
                             </div>  
                         </div>   
                     </>
@@ -217,7 +209,7 @@ const MultiPlayer = () => {
             else {
                 return (
                     <>
-                        <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 counter-multiplayer'>
+                        <div className='counter-multiplayer'>
                         <Counter player1={counterPlayer1} player2={counterPlayer2}/> 
                         </div> 
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -230,10 +222,10 @@ const MultiPlayer = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <div className='col-lg-4 col-md-4 col-sm-4 col-xs-10 game-medium'>
+                                <div className='game-medium'>
                                     {renderSelections()}
                                 </div>
-                                <div className='col-lg-4 col-md-4 col-sm-4 col-xs-1 game-right'>
+                                <div className='game-right'>
                                     <div className='box-buttons-content-multiplayer'>
                                         {iconByStateRight()}
                                         {selections.map((select, index) => (
@@ -316,18 +308,18 @@ const MultiPlayer = () => {
 
     return (
         <>
-            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container-multiplayer'>
-                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
-                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-top'>
-                    <GameCounter player1={counterTotalPlayer1} player2={counterTotalPlayer2} namePlayer1={"JUG 1"} namePlayer2={"JUG 2"}/>
+            <div className='gamePage-container-multiplayer'>
+                <div className='navbar'>
+                    <div className='navbar-top'>
+                        <GameCounter player1={counterTotalPlayer1} player2={counterTotalPlayer2} namePlayer1={"JUG 1"} namePlayer2={"JUG 2"}/>
                     </div>    
-                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-bottom'>
+                    <div className='navbar-bottom'>
                         <a onClick={goBack} className="btn-gp">SALIR</a>
                         {renderByState()}
                         {iconSound()}
                     </div> 
                 </div> 
-                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game-multiplayer'>
+                <div className='content-game-multiplayer'>
                     {renderStarting()}
                 </div>    
             </div>
