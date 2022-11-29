@@ -214,7 +214,7 @@ const MultiPlayer = () => {
                         </div> 
                         <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                             <div className='game-container-multiplayer'>
-                                <div className='col-lg-4 col-md-4 col-sm-4col-xs-1 game-left'>
+                                <div className='game-left'>
                                     <div className='box-buttons-content-multiplayer'>
                                         {iconByStateLeft()}
                                         {selections.map((select, index) => (

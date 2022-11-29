@@ -1,10 +1,15 @@
 .game-container-multiplayer {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .game-medium {
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin: 0px 50px 0px 50px;
+    width: 30%;
 }
 
 .box-buttons-content-multiplayer {
@@ -15,7 +20,7 @@
 }
 
 .img-multiplayer {
-    width: 100px;
+    width: 90px;
     border-radius: 150px;
     opacity: .7;
     border-style:inset;
@@ -37,7 +42,7 @@
 }
 
 .selection-image-mp {
-    width: 180px;
+    width: 160px;
     border-radius: 150px;
     border-style:inset;
     border-width: 5px;
@@ -58,8 +63,12 @@
     font-size: 20px;
 }
 
+.box-end-game {
+    margin-top: 100px;
+}
+
 .msg-end-mp {
-    font-size: 25px;
+    font-size: 45px;
     font-weight: 900;
     color: white;
     text-align: center;
@@ -197,19 +206,15 @@
         margin-top: 10px;
         width: 100%;
     }
-    .game-left {
-        justify-content: center;
-        justify-content: left;
-    }
     .game-medium {
+        display: flex;
         justify-content: center;
-    }
-    .game-right {
-        justify-content: center;
-        justify-content: right;
+        align-items: center;
+        margin: 0px 50px 0px 50px;
+        width: 20%;
     }
     .selection-image-mp {
-        width: 80px;
+        width: 70px;
         border-width: 5px;
         margin-left: 10px;
     }
@@ -226,7 +231,7 @@
         margin-left: 10px;
     }
     .msg-end-mp {
-        font-size: 10px;
+        font-size: 25px;
     }
     .msg-mp {
         margin-left: 10px;

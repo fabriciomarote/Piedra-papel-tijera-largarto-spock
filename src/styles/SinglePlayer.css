@@ -3,6 +3,7 @@
     width: 100vw;
     height: 100vh;
     justify-content: center;
+    
 }
 
 .navbar {
@@ -69,6 +70,7 @@
 }
 
 .box-buttons-selected-content {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -192,10 +194,10 @@
         font-size: 8vw;
     }
     .img {
-        width: 56px;
+        width: 50px;
         padding: 5px;
-        margin: 5px;
-        margin-top: 40px;
+        margin: 2px;
+        margin-top: 0px;
         border-width: 3px;
     }
     .box-end-game {
@@ -205,13 +207,13 @@
         font-size: 30px;
     }
     .selection-image {
-        width: 100px;
+        width: 80px;
         border-width: 3px;
     }
     .msg-output {
         font-size: 50px;
     }
     .msg {
-        font-size: 30px;
+        font-size: 25px;
     }
 }
