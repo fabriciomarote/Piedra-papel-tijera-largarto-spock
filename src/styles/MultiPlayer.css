@@ -136,7 +136,7 @@
         left: 39%;
     }
     .title span {
-        font-size: 4.3vw;
+        font-size: 4.7vw;
     }
 }
   
@@ -208,6 +208,13 @@
         align-items: center;
         margin: 0px 50px 0px 50px;
         width: 20%;
+    }
+    .title {
+        top: 50%;
+        left: 32%;
+    }   
+    .title span {
+        font-size: 13vw;
     }
     .selection-image-mp {
         width: 70px;
