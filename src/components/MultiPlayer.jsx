@@ -330,9 +330,6 @@ const MultiPlayer = () => {
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game-multiplayer'>
                     {renderStarting()}
                 </div>    
-                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 footer'>
-                    <Footer/> 
-                </div>  
             </div>
         </>
     );

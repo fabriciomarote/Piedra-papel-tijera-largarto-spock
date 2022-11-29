@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { rock, paper, scissors, lizard, spock } from './Selections';
 import { useSound }  from 'use-sound';
 import Boton from '../media/botones3.mp3'
+import Footer from './Footer';
 import '../styles/MainPage.css';
 
 const MainPage = () => {
@@ -28,23 +29,19 @@ const MainPage = () => {
 
     return (
       <>
-        <div className='mainPage-content'> 
-          <div className='mainPage-container'> 
+        <div className='mainPage-container'>  
             <div className='box-container'>
               <div className='images-game'>
-                <div className='box-top-images'>
+                <div className='box-images'>
                   <img className='img-mp' src={rock.src2} alt="imagen"/>
                   <img className='img-mp' src={paper.src2} alt="imagen"/>
-                </div>
-                <div className='box-medium-images'>
                   <img className='img-mp' src={scissors.src2} alt="imagen"/>
-                </div>
-                <div className='box-bottom-images'>
                   <img className='img-mp' src={lizard.src2} alt="imagen"/>
                   <img className='img-mp' src={spock.src2} alt="imagen"/>
                 </div>
               </div>
               <div className='buttons'>
+                <a onClick={goSinglePlayer} className="btn-mp">UN JUGADOR</a> 
                 <a type="button" className="btn-mp" id="modal" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => playBoton()}>REGLAS</a>
                 <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div className="modal-dialog modal-dialog-centered" role="document">
@@ -75,13 +72,12 @@ const MainPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className='buttons-content'>
-                <a onClick={goSinglePlayer} className="btn-mp">UN JUGADOR</a> 
-                <a onClick={goMultiPlayer} className="btn-mp">MULTIJUGADOR</a>
+                <a onClick={goMultiPlayer} className="btn-mp">DOS JUGADORES</a>
               </div>
             </div>
-          </div>
+          <div className='footer'>
+            <Footer/> 
+          </div> 
         </div>
       </>
     );

@@ -1,8 +1,14 @@
 body {
     background-color: rgb(34, 34, 34);
+}
+
+.mainPage-container {
     display: grid;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 100vw;
 }
 
 .icon {
@@ -10,65 +16,54 @@ body {
     display: flex;
     justify-content: right;
     cursor: pointer;
-    margin-top: -2px;
 }
 
-.mainPage-content {
-    position: absolute;  
+.box-container {
     display: grid;
     justify-content: center;
     align-items: center;
-    border-style:inset;
     border-radius: 40px;
-    background-color: rgb(35, 35, 35);
-    box-shadow: 0px 0px 50px 
-    rgba(148, 23, 23, 2.9);
-    padding: 50px;
-}
-
-.imagen {
-    height: 100%;
-    width: 100%;
-    border-radius: 250px;
+    padding: 10px;
+    margin-top: 200px;
 }
 
 .images-game {
     display: grid;
     justify-content: center;
-    margin-left: 20px;
 }
 
-.box-top-images, .box-medium-images, .box-bottom-images {
+.box-images {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .img-mp {
     border-radius: 100px;
     border-style: inset;
     border-width: 5px;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(187, 187, 187);
 }
 
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content:space-around;
+    width: 100%;
+    align-items: center;
     padding: 10px;
     color: white;
-    font-size: 18px;
-   
+    font-size: 15px;
 }
 
 .buttons-content {
     display: flex;
     justify-content:space-between;
-    padding: 5px;
+    width: 100%;
     color: white;
-    font-size: 16px;
-    margin-bottom: -20px;
-    margin: -5px;
+    font-size: 15px;
+    margin-top: 30px;
 }
 
 .btn-mp {
@@ -80,7 +75,7 @@ body {
 }
 
 .btn-mp:focus, .btn-mp:hover, .btn-mp:active {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 #modal {
@@ -98,68 +93,50 @@ body {
 
 @media (min-width: 1200px) {
     .img-mp {
-        width: 100px;
+        width: 200px;
         margin: 15px;
     }
-    .images-game {
-        display: grid;
-        justify-content: center;
-        margin-left: 0px;
-    }
-    .mainPage-content {
-        top:15%;
-        left: 35%; 
-        width: 450px;
-    }
+    .box-container {
+        width: 100%;
+    }  
 }
   
 @media (max-width: 1199px) and (min-width: 992px) {
+    .mainPage-container {
+        margin-left: 400px;
+    }
     .img-mp {
-        width: 100px;
+        width: 130px;
         margin: 15px;
     }
-    .mainPage-content {
-        top:10%;
-        left: 30%; 
-        width: 400px;
+    .box-container {
+        width: 100%;
     }  
 }
   
 @media (max-width: 991px) and (min-width: 768px) {
+    .mainPage-container {
+        margin-left: 200px;
+    }
     .img-mp {
-        width: 100px;
+        width: 120px;
         margin: 15px;
     }
 
-    .images-game {
-        display: grid;
-        justify-content: center;
-        margin-left: 0px;
-    }
-
-    .mainPage-content {
-        top:10%;
-        left: 25%; 
-        max-width: 400px;
-        max-height: 100%;
+    .box-container {
+        width: 100%;
     }
 }
 
 @media (max-width: 767px) {
-    body {
-        height: 500px;
-    }
-    .images-game {
-        margin-left: 0px;
-    }
     .img-mp {
-        width: 90px;
-        margin: 20px;
+        width: 80px;
+        margin: 5px;
     }
-    .mainPage-content {
-        top:10%;
-        left: 7%; 
-        max-width: 100%;
-        max-height: 100%;
+    .box-container {
+        width: 100%;
+    }
+    .buttons {
+        font-size: 12px;
     }
 }

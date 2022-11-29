@@ -10,7 +10,7 @@ import Boton from '../media/botones3.mp3'
 import SelectBoton from '../media/botones2.mp3'
 import Counter from './Counter';
 import GameCounter from './GameCounter';
-import Footer from './Footer';
+
 import '../styles/SinglePlayer.css';
 import '../styles/Footer.css';
 
@@ -269,23 +269,20 @@ const SinglePlayer = () => {
 
     return (
         <>
-            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 gamePage-container'>
-                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar'>
-                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-top'>
+            <div className='gamePage-container'>
+                <div className='navbar'>
+                    <div className='navbar-top'>
                         <GameCounter player1={counterTotalUser} player2={counterTotalComp} namePlayer1={"USER"} namePlayer2={"COMP"} />
                     </div>    
-                    <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar-bottom'>
+                    <div className='navbar-bottom'>
                         <a onClick={goBack} className="btn-gp">SALIR</a>
                         {renderByState()}
                         {iconSound()}
                     </div> 
                 </div> 
-                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 content-game'>
+                <div className='content-game'>
                     {renderStarting()}
-                </div>   
-                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 footer'>
-                    <Footer/> 
-                </div>   
+                </div>     
             </div>
         </>
     );
