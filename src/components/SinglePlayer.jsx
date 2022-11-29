@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { selections } from './Selections';
-import { useSound }  from 'use-sound';
-import Win from '../media/winner.png';
-import Lose from '../media/loser.png';
+import { useSound }  from 'use-sound';  
 import Ganador from '../media/ganador.mp3'
 import Perdedor from '../media/fallo.mp3'
 import Boton from '../media/botones3.mp3'
@@ -162,10 +160,7 @@ const SinglePlayer = () => {
                     <>
                         <Counter player1={counterUser} player2={counterComp}/>
                         <div className='box-end-game'>
-                            <div className='box-content'>
-                                <img className='winner-image' src={Win} alt="imagen"/>
-                                <p className='msg-end'>¡Ganaste la partida!</p>
-                            </div>
+                            <p className='msg-end'>¡Ganaste la partida!</p>
                         </div> 
                     </>
                 );
@@ -178,10 +173,7 @@ const SinglePlayer = () => {
                     <>
                         <Counter player1={counterUser} player2={counterComp}/>
                         <div className='box-end-game'>
-                            <div className='box-content'>
-                                <img className='loser-image' src={Lose} alt="imagen"/>
-                                <p className='msg-end'>¡Perdiste la partida!</p>
-                            </div>  
+                            <p className='msg-end'>¡Perdiste la partida!</p>
                         </div>      
                     </>
                 ) ;     
