@@ -218,10 +218,11 @@
     }
     .selection-image-mp {
         width: 70px;
-        border-width: 3px;
+        border-width: 2px;
     }
     .img-multiplayer {
         width: 50px;
+        border-width: 2px;
     }
     .msg-output {
         font-size: 10px;
