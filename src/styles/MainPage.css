@@ -130,8 +130,9 @@ body {
 
 @media (max-width: 767px) {
     .img-mp {
-        width: 80px;
-        margin: 5px;
+        width: 60px;
+        margin: 2px;
+        border-width: 2px;
     }
     .box-container {
         width: 100%;
