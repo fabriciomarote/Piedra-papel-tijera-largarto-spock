@@ -41,5 +41,23 @@
     width: 50px;
     border-radius: 5px;
     text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media only screen and (min-width:481px) and (max-width:720px) {
+    .counter-container {
+        margin-top: 0px;
+        margin-top: -50px;
+        margin-bottom: -300px;
+    }
+    .counter {
+        height: 100px;
+        padding: 30px;
+    }
+}
+
+@media only screen and (min-width:0px) and (max-width:480px) {
+    .counter-container {
+        margin-top: 0px;
+    }
 }

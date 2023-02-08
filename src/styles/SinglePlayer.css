@@ -1,9 +1,9 @@
 .gamePage-container {
     display: grid;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    
 }
 
 .navbar {
@@ -12,10 +12,17 @@
     align-items: center;
     color: white;
     width: 100%;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.navbar-top {
+    width: 100%;
 }
 
 .navbar-top, .navbar-bottom {
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -141,7 +148,7 @@
     opacity: .1;
 }
 
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
     .title {
         display: grid;
         text-align: center;
@@ -156,7 +163,7 @@
     }
 }
   
-@media (max-width: 1199px) and (min-width: 992px) {
+@media only screen and (min-width:721px) and (max-width: 1199px) {
     .title {
         top: 50%;
         left: 37%;
@@ -169,7 +176,12 @@
     }
 }
   
-@media (max-width: 991px) and (min-width: 768px) {
+@media only screen and (min-width:481px) and (max-width:720px) {
+    .navbar {
+        height: 10vh;
+        padding: 0px;
+        margin-top: 0px;
+    }
     .title {
         top: 50%;
         left: 34%;
@@ -178,17 +190,18 @@
         font-size: 6vw;
     }
     .game-container-singlePlayer  {
-        width: 500px;
+        width: 100%;
+        margin-top: 0px;
     }
     .img {
         width: 100px;
         border-radius: 150px;
         padding: 5px;
-        margin: 20px;
+        margin: 10px;
     }
 }
 
-@media (max-width: 767px) {
+@media only screen and (min-width:0px) and (max-width:480px){
     .title {
         top: 50%;
         left: 32%;
@@ -197,7 +210,7 @@
         font-size: 8vw;
     }
     .img {
-        width: 50px;
+        width: 60px;
         padding: 5px;
         margin: 5px;
         margin-top: 0px;

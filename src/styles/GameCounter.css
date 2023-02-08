@@ -37,11 +37,21 @@
 }
 
 .point-total {
-    font-size:  15px;
+    font-size:  20px;
     font-weight: 900;
     color: rgb(255, 255, 255);
     width: 100px;
     border-radius: 5px;
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media only screen and (min-width:0px) and (max-width:480px) {
+    .counter-total-container {
+       width: 90%;
+       padding-left: 5px;
+    }
+    .point {
+        font-size: 10px;
+    }
 }

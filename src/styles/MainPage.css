@@ -90,32 +90,23 @@ body {
     color: white;
 }
 
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
     .img-mp {
         width: 200px;
         margin: 15px;
     }
     .box-container {
         width: 100%;
+        margin-top: 0px;
     }  
 }
 
-@media (min-width: 1200px) and (orientation: landscape) {
-    .img-mp {
-        width: 200px;
-        margin: 15px;
-    }
-    .box-container {
-        width: 100%;
-    }  
-}
-  
-@media (max-width: 1199px) and (min-width: 992px) {
+@media only screen and (min-width:721px) and (max-width: 1199px) {
     .mainPage-container {
-        margin-left: 400px;
+        width: 100%;
     }
     .img-mp {
-        width: 130px;
+        width: 100px;
         margin: 15px;
     }
     .box-container {
@@ -127,100 +118,35 @@ body {
         font-size: 15px;
     }
 }
-
-@media (max-width: 1199px) and (min-width: 992px) and (orientation: landscape) {
-    .mainPage-container {
-        margin-left: 300px;
-    }
+ 
+@media only screen and (min-width:481px) and (max-width:720px) {
     .img-mp {
-        width: 130px;
-        margin: 15px;
-    }
-    .box-container {
-        width: 100%;
-    }  
-    .buttons {
-        font-size: 15px;
-    }
-}
-  
-@media (max-width: 991px) and (min-width: 768px) {
-    .mainPage-container {
-        margin-left: 200px;
-    }
-    .img-mp {
-        width: 120px;
-        margin: 15px;
+        width: 70px;
+        margin: 20px;
     }
 
     .box-container {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 0px;
     }
 }
 
-@media (max-width: 991px) and (min-width: 768px) and (orientation: landscape) {
-    .mainPage-container {
-        margin-left: 250px;
-    }
-    .img-mp {
-        width: 120px;
-        margin: 15px;
-    }
-
-    .box-container {
-        margin-top: 50px;
-        width: 100%;
-        
-    }
-}
-
-@media (max-width: 767px) {
-    .img-mp {
-        width: 55px;
-        margin: 2px;
-        border-width: 2px;
-    }
-    .box-container {
-        width: 100%;
-        margin-top: 10px;
-    }
-    .buttons {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-    .img-mp {
-        width: 60px;
-        margin: 2px;
-        border-width: 2px;
-    }
-    .box-container {
-        width: 100%;
-        margin-top: 10px;
-    }
-    .buttons {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 280px) {
+@media only screen and (min-width:0px) and (max-width:480px){
     .img-mp {
         width: 45px;
-        margin: 2px;
+        margin: 10px;
         border-width: 2px;
     }
     .box-container {
         width: 100%;
-        margin-top: 10px;
+        margin-top: 0px;
     }
     .buttons {
         font-size: 8px;
     }
 }
 
-@media (max-width: 280px) and (orientation: landscape) {
+@media only screen and (min-width:0px) and (max-width:700px) and (orientation: landscape) {
     .img-mp {
         width: 40px;
         margin: 2px;
